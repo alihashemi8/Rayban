@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+qa/
+.npm-cache/
+.ssr-build/
+.data/
+.env
+.env.*
+!.env.example

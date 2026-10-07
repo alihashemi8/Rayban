@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("raiban-theme") === "light" ? "light" : "dark";
+        if (localStorage.getItem("raiban-language") === "en") {
+          document.documentElement.lang = "en";
+          document.documentElement.dir = "ltr";
+          document.documentElement.dataset.preferencesPending = "true";
+        }
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <style>
+      html[data-preferences-pending] #root {
+        visibility: hidden;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070e20" />
+    <meta
+      name="description"
+      content="رایبان، استودیوی مهندسی نرم‌افزار. طراحی و ساخت اکوسیستم‌های آموزشی، سیستم‌های هوشمند و تجربه‌های دیجیتال."
+    />
+    <meta property="og:title" content="رایبان — مهندسی فردا" />
+    <meta
+      property="og:description"
+      content="از یک ایده جسورانه تا یک سیستم ماندگار. استودیوی مهندسی نرم‌افزار رایبان."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/webp" href="/raiban-logo.webp" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource-variable/vazirmatn/files/vazirmatn-arabic-wght-normal.woff2"
+    />
+
+    <title>رایبان — مهندسی فردا</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+/* One pearl-blue glass palette across scenes, cards and application previews. */
+:root[data-theme="light"] {
+  --paper: #eef3fb;
+  --ink: #203451;
+  --muted: #526780;
+  --accent: #486abb;
+  --line: #46689b28;
+  --surface: #f8fbffdc;
+  --surface-line: #46689b30;
+  --subtle-surface: #7692c211;
+  background: var(--paper);
+  color: var(--ink);
+}
+[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse at 12% 4%, #d6e4fb80, transparent 36%),
+    radial-gradient(ellipse at 90% 45%, #e2dff240, transparent 42%),
+    var(--paper);
+}
+[data-theme="light"] :is(h1, h2, h3, h4) {
+  color: var(--ink);
+}
+[data-theme="light"] .team-section {
+  background: linear-gradient(180deg, #dfe9f650, #eef3fb00);
+  border-block-color: var(--line);
+}
+[data-theme="light"]
+  :is(
+    .site-header,
+    .project-card,
+    .team-card,
+    .contact-channel,
+    .admin-login-card,
+    .editor-form,
+    .technology-shell
+  ) {
+  background: linear-gradient(145deg, #ffffffdc, #e5edf9b8);
+  border-color: var(--surface-line);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 18px 48px #294a7610;
+}
+[data-theme="light"] :is(.brand-logo, .core-emblem img) {
+  filter: brightness(0) saturate(100%) invert(28%) sepia(23%) saturate(1098%)
+    hue-rotate(180deg);
+}
+[data-theme="light"] .hero h1 > span {
+  background-image: linear-gradient(100deg, #655b9d, #426ab1 65%, #426b90);
+}
+[data-theme="light"] .knowledge-scene::before {
+  background: radial-gradient(
+    circle,
+    #9bbce92e,
+    #c7bde51a 42%,
+    transparent 72%
+  );
+  filter: blur(30px);
+}
+[data-theme="light"] .scene-grid {
+  background-image:
+    linear-gradient(#5178b511 1px, transparent 1px),
+    linear-gradient(90deg, #5178b511 1px, transparent 1px);
+}
+[data-theme="light"] .neural-shell {
+  background:
+    radial-gradient(circle at 28% 20%, #ffffffc0, transparent 35%),
+    radial-gradient(circle at 74% 80%, #b2b1d445, transparent 48%),
+    radial-gradient(circle, #d9e6f866, #bed1ed66);
+  border-color: #6688bc45;
+  box-shadow:
+    inset -18px -15px 44px #8a9bc326,
+    inset 12px 8px 24px #ffffff90,
+    0 18px 65px #5a79ad12;
+}
+[data-theme="light"] .neural-shell::after {
+  background-image: radial-gradient(#537eb0a0 1.3px, transparent 1.3px);
+}
+[data-theme="light"] .neural-ring {
+  border-color: #547bb28c;
+  box-shadow:
+    0 0 12px #6083b515,
+    inset 0 0 12px #6083b50a;
+}
+[data-theme="light"] .ring-b {
+  border-color: #8773ac80;
+}
+[data-theme="light"] .ring-c {
+  border-color: #6184bc80;
+}
+[data-theme="light"] .core-emblem::before {
+  background: radial-gradient(circle, #9aafd42e, transparent 65%);
+}
+[data-theme="light"]
+  :is(.floating-code, .floating-insight, .node-label, .ai-label) {
+  background: linear-gradient(135deg, #ffffffce, #dce6f4bf);
+  border-color: #7795c044;
+  color: #3f5679;
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    0 18px 45px #355a8a18;
+}
+[data-theme="light"] :is(.floating-code > div, .floating-code > small) {
+  border-color: var(--line);
+}
+[data-theme="light"]
+  :is(
+    .floating-code > div > span,
+    .floating-code > small,
+    .floating-insight small
+  ) {
+  color: #526887;
+}
+[data-theme="light"] .floating-code code {
+  color: #405b81;
+}
+[data-theme="light"] .floating-code code :is(em, b) {
+  color: #7962a0;
+}
+[data-theme="light"] .floating-code code strong {
+  color: #3d6da1;
+}
+[data-theme="light"] .floating-code code span {
+  color: #356f75;
+}
+[data-theme="light"] .floating-insight strong {
+  color: #294569;
+}
+[data-theme="light"] .floating-insight > svg {
+  color: #7c67a3;
+}
+[data-theme="light"] .insight-bars i {
+  background: linear-gradient(#a08bc4, #7190c0);
+}
+[data-theme="light"] .profile-art {
+  background:
+    radial-gradient(ellipse at 50% 60%, #b7cbed70, transparent 70%), #e3ebf7;
+}
+[data-theme="light"] .team-card-1 .profile-art {
+  background:
+    radial-gradient(ellipse at 50% 60%, #c4bddf70, transparent 70%), #e9eaf6;
+}
+[data-theme="light"] .team-card-2 .profile-art {
+  background:
+    radial-gradient(ellipse at 50% 60%, #b9d4dc70, transparent 70%), #e3edf4;
+}
+[data-theme="light"] .profile-grid {
+  background-image:
+    linear-gradient(#6582b01b 1px, transparent 1px),
+    linear-gradient(90deg, #6582b01b 1px, transparent 1px);
+}
+[data-theme="light"] .team-grid .profile-initial {
+  background: linear-gradient(135deg, #ffffffba, #b8cbed45);
+  color: #3e5b89;
+  border-color: #7793c14a;
+  box-shadow:
+    inset 0 1px 2px #ffffff,
+    8px 12px 0 #6a86b011,
+    0 15px 35px #41638d19;
+}
+[data-theme="light"] :is(.profile-index, .team-group-heading > span) {
+  color: #566e91;
+}
+[data-theme="light"] .demo-badge {
+  color: #6a5494;
+  background: #9b8ab915;
+  border-color: #8a75ae38;
+}
+[data-theme="light"]
+  :is(
+    .team-card-body h4,
+    .team-card-body h3,
+    .member-page h1,
+    .member-page h2,
+    .team-group h2,
+    .team-group h3
+  ) {
+  color: var(--ink);
+}
+[data-theme="light"] :is(.school-art, .business-art, .ai-art, .project-cover) {
+  background:
+    radial-gradient(ellipse at 80% 15%, #b7ccea80, transparent 65%),
+    linear-gradient(145deg, #dee9f7, #e5e8f6);
+  border-color: #7892bc38;
+}
+[data-theme="light"] :is(.mini-app, .business-art .mini-app) {
+  background: #f6f9ff;
+  border-color: #819ac33e;
+  color: #52698c;
+  box-shadow: 0 20px 40px #31517d22;
+}
+[data-theme="light"] :is(.mini-app aside, .business-art .mini-app aside) {
+  background: #e4edf9;
+  border-color: #7791bc24;
+}
+[data-theme="light"] .mini-brand {
+  color: #355482;
+}
+[data-theme="light"] :is(.mini-nav.selected, .business-art .mini-nav.selected) {
+  background: #a6bde530;
+  color: #3c6197;
+}
+[data-theme="light"] .mini-top {
+  border-color: var(--line);
+}
+[data-theme="light"]
+  :is(.mini-stats > div, .business-art .mini-stats > div, .mini-chart) {
+  background: #eaf0fa;
+  border-color: #8aa2c92c;
+}
+[data-theme="light"] .mini-stats strong {
+  color: #355884;
+}
+[data-theme="light"] .art-coordinate {
+  color: #50688b;
+}
+[data-theme="light"] .ai-core {
+  background: radial-gradient(
+    circle at 25% 15%,
+    #f4f8ff,
+    #a6bfe8 42%,
+    #7c97c3 76%,
+    #6682b0
+  );
+  color: #f7faff;
+  box-shadow:
+    inset 5px 4px 18px #ffffff85,
+    inset -10px -12px 25px #5c78a445,
+    0 0 55px #7899c62a;
+}
+[data-theme="light"] .ai-orbit {
+  border-color: #6886b44a;
+  box-shadow: none;
+}
+[data-theme="light"] .ai-prompt {
+  background: #f1f6ffcc;
+  border-color: #819ac345;
+  color: #415d87;
+  box-shadow: 0 12px 30px #3b5b8415;
+}
+[data-theme="light"] .ai-art .art-coordinate {
+  color: #536f93;
+}
+[data-theme="light"] .project-status {
+  background: #f4f8ffe8;
+  color: #3f5c83;
+  border-color: #7493c13b;
+}
+[data-theme="light"] .project-open {
+  background: #e5edf9d9;
+  color: #3c5f96;
+  border-color: #7493c14a;
+}
+[data-theme="light"] .code-window {
+  background: linear-gradient(145deg, #f8fbff, #e7eef9);
+  border-color: var(--surface-line);
+  box-shadow: 0 18px 40px #33578118;
+}
+[data-theme="light"] :is(.code-window-top, .code-window-bottom) {
+  color: #536e91;
+  border-color: var(--line);
+}
+[data-theme="light"] .code-window-top > small {
+  color: #536e91;
+}
+[data-theme="light"] .code-window pre {
+  color: #3b628d;
+}
+[data-theme="light"] .code-window code em {
+  color: #7186a5;
+}
+[data-theme="light"] .timeline > div:first-child .timeline-point {
+  box-shadow:
+    0 0 0 6px var(--paper),
+    0 0 18px #6486bd25;
+}
+[data-theme="light"] .channel-icon {
+  background: linear-gradient(145deg, #f8fbff, #dce7f7);
+  border: 1px solid #718fc033;
+  color: #496ca6;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+[data-theme="light"] .contact-channel:hover {
+  background: #f8fbff;
+  border-color: #6b8ebe60;
+}
+[data-theme="light"] .about-section::before {
+  color: #6482b00a;
+}
+[data-theme="light"] .map-center {
+  box-shadow: 0 0 40px #768bc216;
+}
+[data-theme="light"] .floating-technology {
+  color: #5577ab;
+  opacity: 0.06;
+}
+[data-theme="light"] .floating-technology img {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1032%)
+    hue-rotate(178deg);
+}
+[data-theme="light"] :is(.detail-sidebar, .detail-phases, .next-project) {
+  background: #f7faff70;
+}
+@media (max-width: 700px) {
+  [data-theme="light"] .floating-technology {
+    opacity: 0.045;
+  }
+}
