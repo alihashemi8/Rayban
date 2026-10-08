@@ -4,7 +4,6 @@ import {
   ArrowLeft,
   Phone,
   Mail,
-  MessagesSquare,
   Send,
   Github,
   Linkedin,
@@ -57,7 +56,7 @@ const channels = [
     fa: "واتس‌اپ",
     en: "WhatsApp",
     url: "https://wa.me/989045911122",
-    Icon: MessagesSquare,
+    brand: "whatsapp" as const,
     handle: "09045911122",
   },
   {

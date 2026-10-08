@@ -217,10 +217,10 @@ function Hero({ lang, theme }: { lang: Language; theme: Theme }) {
             {phrase(lang, "کاوش در پروژه‌ها", "Explore our work")}
             <ArrowUpLeft size={19} />
           </a>
-          <a href="/contact" className="text-link">
-            {phrase(lang, "ایده‌ای در ذهن دارید؟", "Have an idea?")}
-            <ArrowUpLeft size={17} />
-          </a>
+          <Link to="/contact" className="button button-light">
+            {phrase(lang, "شروع همکاری", "Start collaborating")}
+            <ArrowUpLeft size={19} aria-hidden="true" />
+          </Link>
         </div>
         <div className="hero-footnote">
           <div className="mini-symbols">
@@ -529,53 +529,53 @@ function Ecosystem({ lang }: { lang: Language }) {
     [
       "نرم‌افزار",
       "Software",
-      "از طراحی معماری تا توسعه وب و اپلیکیشن؛ محصولاتی که برای رشد ساخته می‌شوند.",
-      "From architecture to web and app development. Products designed to grow.",
+      "توسعه رابط کاربری، منطق سمت سرور و API؛ از وب‌سایت تا سامانه‌های مدیریت و خدمات آنلاین.",
+      "Building interfaces, backend logic and APIs for websites, management systems and online services.",
     ],
     [
       "هوش مصنوعی",
       "AI",
-      "دستیارهای هوشمند و تجربه‌هایی که داده را به شناخت و اقدام تبدیل می‌کنند.",
-      "Intelligent assistants and experiences that turn data into understanding and action.",
+      "ساخت دستیارهای متنی و قابلیت‌های مبتنی بر مدل‌های زبانی، با توجه به زمینه محصول و بررسی کیفیت پاسخ‌ها.",
+      "Building text assistants and language-model features, grounded in the product context and evaluated for response quality.",
     ],
     [
       "زیرساخت",
       "Infrastructure",
-      "سیستم‌های متصل، API و زیرساخت ابری برای توسعه پایدار یک محصول.",
-      "Connected systems, APIs and cloud infrastructure for sustainable product development.",
+      "آماده‌سازی محیط اجرا، استقرار با Docker و پایش سرویس‌ها؛ برای نگهداری و به‌روزرسانی محصول.",
+      "Setting up runtime environments, deploying with Docker and monitoring services to maintain and update the product.",
     ],
     [
       "تجربه کاربری",
       "Experience",
-      "طراحی ساده و دقیق؛ برای اینکه فناوری پیچیده، تجربه‌ای روان و انسانی بسازد.",
-      "Thoughtful design that turns complex technology into a clear, human experience.",
+      "طراحی مسیرهای کاربر و رابط‌های خوانا برای موبایل و دسکتاپ؛ با توجه به بازخورد و استفاده روزمره.",
+      "Designing clear workflows and readable interfaces for mobile and desktop, informed by feedback and everyday use.",
     ],
   ];
   return (
     <section className="ecosystem-section section wrap">
       <Reveal className="ecosystem-layout">
-        <div>
+        <div className="ecosystem-copy">
           <SectionLabel number="03">
-            {phrase(lang, "چشم‌انداز متصل", "A CONNECTED VISION")}
+            {phrase(lang, "تخصص‌های ما", "OUR DISCIPLINES")}
           </SectionLabel>
           <h2>
-            {phrase(lang, "یک اکوسیستم.", "One ecosystem.")}
+            {phrase(lang, "تخصص‌های مکمل،", "Complementary skills.")}
             <br />
             <span>
-              {phrase(lang, "فرصت‌های بی‌نهایت.", "Endless possibilities.")}
+              {phrase(lang, "برای یک محصول.", "One product.")}
             </span>
           </h2>
           <p>
             {phrase(
               lang,
-              "محصول خوب از اتصال تخصص‌ها شکل می‌گیرد. مهندسی، هوش مصنوعی، زیرساخت و طراحی را در یک مسیر مشترک کنار هم می‌گذاریم.",
-              "Great products connect disciplines. We bring engineering, AI, infrastructure and design together in one shared direction.",
+              "در رایبان، توسعه نرم‌افزار، طراحی تجربه کاربری و زیرساخت را کنار هم پیش می‌بریم. هوش مصنوعی را هم وقتی به کار می‌گیریم که به حل مسئله مشخصی در محصول کمک کند.",
+              "At Rayban, we develop software, user experience and infrastructure together. We use AI when it helps solve a specific problem in the product.",
             )}
           </p>
           <div
             className="role-tabs"
             role="tablist"
-            aria-label={phrase(lang, "نقش‌های اکوسیستم", "Ecosystem roles")}
+            aria-label={phrase(lang, "تخصص‌های ساخت محصول", "Product development disciplines")}
           >
             {roles.map((r, i) => (
               <button
@@ -617,7 +617,7 @@ function Ecosystem({ lang }: { lang: Language }) {
           <div className="map-center">
             <Sparkles />
             <b>{phrase(lang, "رایبان", "Rayban")}</b>
-            <small>CONNECTED BY AI</small>
+            <small>{phrase(lang, "توسعه محصول", "PRODUCT DEVELOPMENT")}</small>
           </div>
           {roles.map((r, i) => (
             <button
@@ -632,7 +632,7 @@ function Ecosystem({ lang }: { lang: Language }) {
             </button>
           ))}
           <span className="map-caption mono">
-            HUMAN CONNECTION. INTELLIGENT INFRASTRUCTURE.
+            {phrase(lang, "طراحی، توسعه و نگهداری", "DESIGN · BUILD · MAINTAIN")}
           </span>
         </div>
       </Reveal>

@@ -1221,6 +1221,10 @@ h2 > span {
 .button-light:hover {
   background: #e3eaff;
 }
+.hero-actions .button-light {
+  margin-top: 0;
+  min-height: 48px;
+}
 .contact-email {
   color: #b7cff5;
 }

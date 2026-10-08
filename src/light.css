@@ -286,6 +286,50 @@
 [data-theme="light"] .about-section::before {
   color: #6482b00a;
 }
+[data-theme="light"] .ecosystem-copy h2 > span {
+  color: #486abb;
+}
+[data-theme="light"] .ecosystem-copy > p {
+  color: var(--muted);
+}
+[data-theme="light"] .ecosystem-section .role-tabs button {
+  color: #405777;
+  background: #f6f9ff;
+  border-color: #7a92b6;
+}
+[data-theme="light"] .ecosystem-section :is(.role-tabs button.active, .map-node.active) {
+  color: #fff;
+  background: #385989;
+  border-color: #385989;
+}
+[data-theme="light"] .ecosystem-section :is(.role-tabs button, .map-node):hover {
+  border-color: #385989;
+  box-shadow: 0 0 0 1px #385989;
+}
+[data-theme="light"] .ecosystem-map {
+  mask-image: none;
+  -webkit-mask-image: none;
+  background: radial-gradient(circle, #a8bfe526, #ffffff08 72%);
+  border-color: #7795c04d;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+[data-theme="light"] .ecosystem-section .map-circle {
+  border-color: #8299bd;
+}
+[data-theme="light"] .ecosystem-section .map-lines,
+[data-theme="light"] .ecosystem-section .map-lines::after {
+  background: #879fbd80;
+}
+[data-theme="light"] .ecosystem-section .map-node {
+  border-color: #7a92b6;
+}
+[data-theme="light"] .ecosystem-section .map-node.active .mono {
+  color: #e6eeff;
+}
+[data-theme="light"] .ecosystem-section .map-caption {
+  color: var(--muted);
+}
 [data-theme="light"] .map-center {
   box-shadow: 0 0 40px #768bc216;
 }
