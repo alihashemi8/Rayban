@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Layers,
@@ -28,26 +28,6 @@ export default function Header({
 }) {
   const location = useLocation();
   const [expanded, setExpanded] = useState(false);
-  const toggle = useRef<HTMLButtonElement>(null);
-  const panel = useRef<HTMLElement>(null);
-  useEffect(() => {
-    if (!expanded) return;
-    const outside = (event: PointerEvent) => {
-      if (!panel.current?.contains(event.target as Node)) setExpanded(false);
-    };
-    document.addEventListener("pointerdown", outside);
-    return () => document.removeEventListener("pointerdown", outside);
-  }, [expanded]);
-  useEffect(() => {
-    const close = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && expanded) {
-        setExpanded(false);
-        toggle.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", close);
-    return () => document.removeEventListener("keydown", close);
-  }, [expanded]);
   const links = [
     { to: "/projects", fa: "پروژه‌ها", en: "Projects", Icon: Layers },
     { to: "/#about", fa: "درباره رایبان", en: "About", Icon: Network },
@@ -57,7 +37,6 @@ export default function Header({
   ];
   return (
     <header
-      ref={panel}
       className={`site-header${expanded ? " mobile-expanded" : ""}`}
     >
       <div className="header-inner">
@@ -84,7 +63,6 @@ export default function Header({
             </span>
           </Link>
           <button
-            ref={toggle}
             className="rail-menu-toggle"
             aria-expanded={expanded}
             aria-controls="rail-navigation rail-preferences"
@@ -119,7 +97,6 @@ export default function Header({
                 aria-current={active ? "location" : undefined}
                 title={phrase(lang, fa, en)}
                 aria-label={phrase(lang, fa, en)}
-                onClick={() => setExpanded(false)}
               >
                 <Icon size={19} aria-hidden="true" />
                 <span>{phrase(lang, fa, en)}</span>

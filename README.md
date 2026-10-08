@@ -35,7 +35,7 @@ Ali Hashemi's details were supplied by the owner. Sara Mehr, Armin Rad and Nika 
 
 ## Public site
 
-- Navy glass and light themes with persisted language preferences. The vertical nav is right in Persian and left in English. Desktop/tablet behavior is preserved. Mobile starts with the logo and a downward chevron. It expands vertically into a compact icon rail of the same width, with outside-click and Escape dismissal.
+- Navy glass and light themes with persisted language preferences. The vertical nav is right in Persian and left in English. Desktop/tablet behavior is preserved. Mobile starts with the logo and a downward chevron. It expands vertically into a compact icon rail of the same width, and closes only through its chevron button.
 - Homepage project and member rows scroll horizontally with touch momentum and proximity snapping, without vertical scrolling. Desktop arrows overlay cards and disappear on touch/tablet/mobile layouts. /projects and /team provide full directories and detail pages.
 - The homepage shows only current members. Former collaborators remain in the full /team directory. The footer has simple links without a repeated name/logo. Public editing links and the old conversation form are removed.
 - Sparse page-anchored Docker, React, Python, GitHub, TypeScript, Kubernetes, PostgreSQL and AI symbols float behind content and respect reduced motion. The neural scene is lazy loaded, capped at 24 frames per second and paused outside the viewport. Its Three.js materials and CSS fallback use distinct, coordinated dark/light palettes; mobile floating cards sit behind the core. Mobile navigation adapts to short viewports without scrolling.

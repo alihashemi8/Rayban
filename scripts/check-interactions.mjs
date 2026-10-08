@@ -89,11 +89,24 @@ assert.equal(
   document.querySelector(".rail-menu-toggle").getAttribute("aria-expanded"),
   "true",
 );
-await React.act(async () =>
+await React.act(async () => {
   document.dispatchEvent(
     new dom.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }),
-  ),
+  );
+  document.querySelector("#main-content").dispatchEvent(
+    new dom.window.Event("pointerdown", { bubbles: true }),
+  );
+});
+assert.equal(
+  document.querySelector(".rail-menu-toggle").getAttribute("aria-expanded"),
+  "true",
 );
+await click(document.querySelector('.rail-navigation a[href="/#about"]'));
+assert.equal(
+  document.querySelector(".rail-menu-toggle").getAttribute("aria-expanded"),
+  "true",
+);
+await click(document.querySelector(".rail-menu-toggle"));
 assert.equal(
   document.querySelector(".rail-menu-toggle").getAttribute("aria-expanded"),
   "false",
@@ -199,5 +212,5 @@ assert.equal(document.documentElement.dir, "rtl");
 await React.act(async () => root.unmount());
 dom.window.close();
 console.log(
-  "DOM integration passed: collapsed mobile menu, Escape, language/theme persistence, project filters, former members only in the team directory, themed messenger marks, added programming symbols, contact links and removed public admin/brief UI. Browser geometry is checked separately.",
+  "DOM integration passed: button-only mobile menu dismissal, language/theme persistence, project filters, former members only in the team directory, themed messenger marks, added programming symbols, contact links and removed public admin/brief UI. Browser geometry is checked separately.",
 );
