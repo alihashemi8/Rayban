@@ -30,3 +30,8 @@ Scores are local synthetic measurements. No live-site deployment or physical-dev
 
 The closed mobile rail contains only the logo and chevron. Opening reveals compact icon navigation below them at the same 54px width; the rail height follows its contents instead of spacing controls across a tall panel. Desktop/tablet rules remain unchanged. Production build, DOM navigation interactions and diff checks passed. The local mobile Lighthouse accessibility audit scored 100. Expanded geometry remains subject to the browser-tool limitation described above.
 
+
+## Synchronized mobile rail motion — 2026-10-08
+
+Mobile navigation now unfolds with a 420ms grid-row transition and opacity fade. Main content and footer have zero lateral gutter while closed and animate their logical start margin to 72px while open, following Persian/English direction. Hidden controls remain outside keyboard navigation through visibility. Reduced-motion preferences disable these transitions. Production build and DOM integration passed; direct animation geometry remains unverified because of the browser-tool limitation above.
+

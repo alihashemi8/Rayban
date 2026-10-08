@@ -98,6 +98,8 @@ export default function Header({
             {expanded ? <ChevronUp size={21} /> : <ChevronDown size={21} />}
           </button>
         </div>
+        <div className="rail-reveal">
+          <div className="rail-reveal-inner">
         <nav
           id="rail-navigation"
           className="rail-navigation"
@@ -159,6 +161,8 @@ export default function Header({
               )}
             </span>
           </button>
+        </div>
+          </div>
         </div>
       </div>
     </header>
