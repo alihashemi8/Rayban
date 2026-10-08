@@ -72,11 +72,7 @@ function Scene({ lang, theme }: { lang: Language; theme: Theme }) {
   const [ready, setReady] = useState(false);
   const [visible, setVisible] = useState(true);
   useEffect(() => {
-    if (
-      reduced ||
-      !window.matchMedia("(min-width: 900px) and (pointer: fine)").matches
-    )
-      return;
+    if (reduced) return;
     const timer = window.setTimeout(() => setReady(true), 1600);
     return () => window.clearTimeout(timer);
   }, [reduced]);
@@ -164,16 +160,6 @@ function Scene({ lang, theme }: { lang: Language; theme: Theme }) {
           ))}
         </div>
       </div>
-      <button
-        className="scene-activate"
-        aria-pressed={ready}
-        onClick={() => setReady(!ready)}
-      >
-        <Network size={12} />
-        {ready
-          ? phrase(lang, "توقف حرکت سه‌بعدی", "Pause 3D view")
-          : phrase(lang, "فعال‌سازی نمای سه‌بعدی", "Activate 3D view")}
-      </button>
       <span className="node-label node-one">
         <span />
         {phrase(lang, "مهندسی نرم‌افزار", "Software engineering")}

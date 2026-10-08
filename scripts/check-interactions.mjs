@@ -80,6 +80,7 @@ const click = async (element) => {
   });
 };
 await mount();
+assert.equal(document.querySelector(".scene-activate"), null);
 assert.equal(
   document.querySelector(".rail-menu-toggle").getAttribute("aria-expanded"),
   "false",
