@@ -2,7 +2,56 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Component, useEffect, useMemo, useRef } from "react";
 import type { ReactNode } from "react";
 import * as THREE from "three";
+import logoShapes from "../assets/rayban-logo-shapes.json";
 import type { Theme } from "./Header";
+
+function RaybanLogo({ theme }: { theme: Theme }) {
+  const geometry = useMemo(() => {
+    const contours: { outline: number[][]; holes: number[][][] }[] = logoShapes;
+    const shapes = contours.map(({ outline, holes }) => {
+      const shape = new THREE.Shape(
+        outline.map(([x, y]) => new THREE.Vector2(x, y)),
+      );
+      holes.forEach((hole) =>
+        shape.holes.push(
+          new THREE.Path(hole.map(([x, y]) => new THREE.Vector2(x, y))),
+        ),
+      );
+      return shape;
+    });
+    const solid = new THREE.ExtrudeGeometry(shapes, {
+      depth: 0.16,
+      bevelEnabled: true,
+      bevelThickness: 0.015,
+      bevelSize: 0.012,
+      bevelSegments: 2,
+      steps: 1,
+    });
+    solid.translate(0, 0, -0.08);
+    solid.computeVertexNormals();
+    return solid;
+  }, []);
+  useEffect(() => () => geometry.dispose(), [geometry]);
+  const light = theme === "light";
+  return (
+    <mesh geometry={geometry} rotation={[0, -0.22, 0.15]} scale={1.25}>
+      <meshStandardMaterial
+        attach="material-0"
+        color={light ? "#426798" : "#c4e5ff"}
+        metalness={0.55}
+        roughness={0.25}
+        emissive={light ? "#253d65" : "#668abf"}
+        emissiveIntensity={light ? 0.08 : 0.2}
+      />
+      <meshStandardMaterial
+        attach="material-1"
+        color={light ? "#203a65" : "#466ca6"}
+        metalness={0.7}
+        roughness={0.3}
+      />
+    </mesh>
+  );
+}
 
 function NeuralCore({ reduced, theme }: { reduced: boolean; theme: Theme }) {
   const light = theme === "light";
@@ -74,12 +123,14 @@ function NeuralCore({ reduced, theme }: { reduced: boolean; theme: Theme }) {
   }, [reduced, invalidate]);
   useFrame(({ clock, pointer }) => {
     if (!group.current || reduced) return;
-    group.current.rotation.y = clock.elapsedTime * 0.06 + pointer.x * 0.12;
+    group.current.rotation.y =
+      Math.sin(clock.elapsedTime * 0.3) * 0.32 + pointer.x * 0.12;
     group.current.rotation.x =
       Math.sin(clock.elapsedTime * 0.18) * 0.08 + pointer.y * 0.08;
   });
   return (
     <group ref={group} rotation={[0.12, 0.2, -0.15]}>
+      <RaybanLogo theme={theme} />
       <mesh>
         <sphereGeometry args={[1.82, 48, 32]} />
         <meshPhysicalMaterial
@@ -194,6 +245,7 @@ class SceneBoundary extends Component<
         <div className="neural-shell" />
         <div className="neural-ring ring-a" />
         <div className="neural-ring ring-b" />
+        <img className="scene-fallback-logo" src="/raiban-logo.webp" alt="" />
       </div>
     ) : (
       this.props.children
@@ -203,14 +255,17 @@ class SceneBoundary extends Component<
 export default function KnowledgeScene({
   reduced,
   theme,
+  onReady,
 }: {
   reduced: boolean;
   theme: Theme;
+  onReady: () => void;
 }) {
   const light = theme === "light";
   return (
     <SceneBoundary>
       <Canvas
+        onCreated={onReady}
         dpr={[1, 1.35]}
         frameloop="demand"
         camera={{ position: [0, 0, 8.6], fov: 44 }}

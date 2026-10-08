@@ -70,6 +70,7 @@ function SectionLabel({
 function Scene({ lang, theme }: { lang: Language; theme: Theme }) {
   const reduced = useReducedMotion();
   const [ready, setReady] = useState(false);
+  const [canvasReady, setCanvasReady] = useState(false);
   const [visible, setVisible] = useState(true);
   useEffect(() => {
     if (reduced) return;
@@ -88,7 +89,7 @@ function Scene({ lang, theme }: { lang: Language; theme: Theme }) {
   }, []);
   return (
     <div
-      className="knowledge-scene"
+      className={`knowledge-scene${ready && visible && canvasReady ? " scene-live" : ""}`}
       aria-label={phrase(
         lang,
         "هسته سه‌بعدی هوش مصنوعی رایبان",
@@ -112,7 +113,7 @@ function Scene({ lang, theme }: { lang: Language; theme: Theme }) {
               </div>
             }
           >
-            <KnowledgeScene reduced={!!reduced} theme={theme} />
+            <KnowledgeScene reduced={!!reduced} theme={theme} onReady={() => setCanvasReady(true)} />
           </Suspense>
         ) : (
           <div className="neural-still">

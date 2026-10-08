@@ -35,3 +35,8 @@ The closed mobile rail contains only the logo and chevron. Opening reveals compa
 
 Mobile navigation now unfolds with a 420ms grid-row transition and opacity fade. Main content and footer have zero lateral gutter while closed and animate their logical start margin to 72px while open, following Persian/English direction. Hidden controls remain outside keyboard navigation through visibility. Reduced-motion preferences disable these transitions. Production build and DOM integration passed; direct animation geometry remains unverified because of the browser-tool limitation above.
 
+
+## Extruded Rayban emblem — 2026-10-08
+
+The supplied raster emblem is traced into 13 vector contours with the reproducible scripts/trace-logo.py helper (Pillow and NumPy). Three.js extrudes these into a beveled solid with separate face/edge materials and positions the emblem inside the neural sphere. The live canvas replaces the flat overlay only after creation; loading and WebGL failure retain a flat fallback. Production build and DOM checks passed. A direct Three.js geometry check confirmed finite vertices, side-material groups and 0.19 units of beveled depth. The contour silhouette was visually checked against the supplied logo. Live WebGL lighting/occlusion has not been directly verified through the unavailable browser tool.
+

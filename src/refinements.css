@@ -862,3 +862,10 @@ span.messenger-mark {
 @media (prefers-reduced-motion: reduce) {
   .ambient-code-card { animation: none; }
 }
+
+/* The live canvas contains the extruded emblem; the flat mark is a loading fallback. */
+.knowledge-scene.scene-live .core-emblem img { visibility: hidden; }
+.knowledge-scene.scene-live .core-emblem::before { opacity: 0; }
+
+.scene-fallback-logo { width: 32%; height: auto; position: absolute; }
+[data-theme="light"] .scene-fallback-logo { filter: brightness(0) saturate(100%) invert(32%) sepia(21%) saturate(1237%) hue-rotate(178deg); }
