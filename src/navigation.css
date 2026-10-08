@@ -9,7 +9,7 @@
   display: none;
 }
 :root {
-  --navigation-space: 220px;
+  --navigation-space: 200px;
 }
 .site-header {
   position: fixed;
@@ -18,7 +18,7 @@
   top: 24px;
   bottom: auto;
   transform: none;
-  width: 176px;
+  width: 156px;
   height: 65vh;
   height: 65dvh;
   margin: 0;
@@ -161,10 +161,10 @@
 }
 @media (max-width: 1150px) {
   :root {
-    --navigation-space: 194px;
+    --navigation-space: 180px;
   }
   .site-header {
-    width: 162px;
+    width: 148px;
     left: 16px;
     top: 16px;
   }
@@ -390,6 +390,24 @@
   }
   .contact-email {
     font-size: 8px;
+  }
+}
+/* Fit desktop and tablet rails to their content, with scrolling on short screens. */
+@media (min-width: 701px) {
+  .site-header {
+    height: auto;
+    max-height: calc(100vh - 2 * var(--nav-edge));
+    max-height: calc(100dvh - 2 * var(--nav-edge));
+  }
+  .site-header .header-inner {
+    height: auto;
+    max-height: inherit;
+    justify-content: flex-start;
+  }
+  .site-header .rail-top,
+  .site-header .rail-navigation,
+  .site-header .header-actions {
+    flex-shrink: 0;
   }
 }
 @media (max-height: 700px) {

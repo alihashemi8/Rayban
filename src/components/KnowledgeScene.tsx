@@ -22,9 +22,9 @@ function RaybanLogo({ theme }: { theme: Theme }) {
     const solid = new THREE.ExtrudeGeometry(shapes, {
       depth: 0.16,
       bevelEnabled: true,
-      bevelThickness: 0.015,
-      bevelSize: 0.012,
-      bevelSegments: 2,
+      bevelThickness: 0.012,
+      bevelSize: 0.005,
+      bevelSegments: 4,
       steps: 1,
     });
     solid.translate(0, 0, -0.08);
@@ -245,7 +245,7 @@ class SceneBoundary extends Component<
         <div className="neural-shell" />
         <div className="neural-ring ring-a" />
         <div className="neural-ring ring-b" />
-        <img className="scene-fallback-logo" src="/raiban-logo.webp" alt="" />
+        <img className="scene-fallback-logo" src="/rayban-logo.svg" alt="" />
       </div>
     ) : (
       this.props.children
@@ -266,7 +266,7 @@ export default function KnowledgeScene({
     <SceneBoundary>
       <Canvas
         onCreated={onReady}
-        dpr={[1, 1.35]}
+        dpr={[1.5, 2]}
         frameloop="demand"
         camera={{ position: [0, 0, 8.6], fov: 44 }}
         gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}

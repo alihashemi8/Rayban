@@ -125,7 +125,7 @@ function Scene({ lang, theme }: { lang: Language; theme: Theme }) {
         )}
       </div>
       <div className="core-emblem">
-        <img src="/raiban-logo.webp" alt="" width="140" height="140" />
+        <img src="/rayban-logo.svg" alt="" width="140" height="140" />
         <span>RAYBAN / CORE</span>
       </div>
       <div className="floating-code" dir="ltr">

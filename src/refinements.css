@@ -4,6 +4,8 @@
   inset: 0;
   height: 100%;
   overflow: clip;
+  inset-inline-start: var(--navigation-space);
+  contain: paint;
 }
 .technical-background .ambient-orb-one {
   top: 24%;
@@ -15,15 +17,16 @@
 }
 .floating-technology {
   position: absolute;
-  width: 100px;
+  left: var(--ambient-x);
+  top: var(--ambient-y);
+  width: 94px;
   color: #90afff;
-  opacity: 0.085;
+  opacity: 0.14;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 13px;
-  transform: rotate(-11deg);
-  animation: technology-drift 17s ease-in-out infinite alternate;
+  transform: translateX(-50%) rotate(var(--ambient-turn));
 }
 .floating-technology img {
   filter: brightness(0) invert(1);
@@ -35,13 +38,9 @@
   font: 10px/1.3 monospace;
   letter-spacing: 1px;
 }
-.technology-float-1 {
-  transform: rotate(13deg);
-  animation-duration: 21s;
-}
-.technology-float-2 {
-  transform: rotate(-5deg);
-  animation-duration: 19s;
+.ambient-symbol-1,
+.ambient-symbol-4 {
+  animation: technology-drift 28s ease-in-out infinite alternate;
 }
 @keyframes technology-drift {
   to {
@@ -51,7 +50,7 @@
 }
 [data-theme="light"] .floating-technology {
   color: #244e97;
-  opacity: 0.065;
+  opacity: 0.105;
 }
 [data-theme="light"] .floating-technology img {
   filter: brightness(0) saturate(100%) invert(27%) sepia(19%) saturate(1525%)
@@ -806,21 +805,108 @@ span.messenger-mark {
   }
 }
 
-/* Decorative code windows are spread through the document, never interactive. */
+/* Staggered bands cover the content area, including the desktop center columns. */
+.ambient-band {
+  position: absolute;
+  direction: ltr;
+  left: 0;
+  right: 0;
+  height: 920px;
+}
+.ambient-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#92b5ff0a 1px, transparent 1px),
+    linear-gradient(90deg, #92b5ff0a 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 25% 45%, #0008, transparent 65%);
+}
+.ambient-band-1::before {
+  mask-image: radial-gradient(ellipse at 75% 45%, #0008, transparent 65%);
+}
+.ambient-circuit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke: #84adfa;
+  stroke-width: 1;
+  opacity: 0.12;
+}
+.ambient-circuit .circuit-dotted {
+  stroke-dasharray: 3 8;
+}
+.ambient-circuit circle {
+  fill: #101d35;
+}
+.ambient-code-glyph {
+  position: absolute;
+  left: var(--ambient-x);
+  top: var(--ambient-y);
+  transform: translateX(-50%) rotate(-8deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #8faaf5;
+  opacity: 0.11;
+  font-family: ui-monospace, monospace;
+}
+.ambient-code-glyph > span {
+  font-size: clamp(44px, 5vw, 74px);
+  line-height: 1;
+  letter-spacing: -5px;
+}
+.ambient-code-glyph small {
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+[data-theme="light"] .ambient-circuit {
+  stroke: #456caa;
+  opacity: 0.15;
+}
+[data-theme="light"] .ambient-circuit circle {
+  fill: var(--paper);
+}
+[data-theme="light"] .ambient-code-glyph {
+  color: #496aa7;
+  opacity: 0.1;
+}
+/* Decorative code windows move with the document and never intercept clicks. */
 .ambient-code-card {
   position: absolute;
-  width: clamp(145px, 17vw, 225px);
+  left: var(--ambient-x);
+  top: var(--ambient-y);
+  width: clamp(145px, 15vw, 205px);
   padding: 12px;
   border: 1px solid #8daeff4d;
   border-radius: 12px;
   background: linear-gradient(145deg, #1b2b4c9c, #111b359c);
   box-shadow: 0 16px 40px #02081928, inset 0 1px #ffffff14;
   color: #a8c7f5;
-  opacity: 0.22;
-  transform: rotate(-9deg);
-  animation: technology-drift 24s ease-in-out infinite alternate;
+  opacity: 0.24;
+  transform: translateX(-50%) rotate(-9deg);
 }
-.ambient-code-card:nth-of-type(even) { transform: rotate(8deg); }
+.ambient-band-1 .ambient-code-card { transform: translateX(-50%) rotate(8deg); }
+@media (min-width: 901px) {
+  .ambient-band-first .ambient-code-card { top: 610px; left: 86%; }
+  .ambient-band-first .ambient-symbol-3 { top: 48px; }
+}
+@media (min-width: 701px) and (max-width: 1150px) {
+  .floating-technology { width: 72px; }
+  .floating-technology img,
+  .floating-technology svg { width: 58px; height: 58px; }
+  .floating-technology span { font-size: 8px; letter-spacing: 0.7px; }
+  .ambient-code-card { width: 160px; opacity: 0.2; }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .ambient-band-first .ambient-symbol-1 { top: 550px; }
+  .ambient-band-first .ambient-symbol-2 { top: 350px; left: 10%; }
+  .ambient-band-first .ambient-symbol-3 { top: 30px; }
+  .ambient-band-first .ambient-code-card { top: 800px; left: 84%; }
+}
 .ambient-code-title {
   display: flex;
   align-items: center;
@@ -856,8 +942,31 @@ span.messenger-mark {
 }
 [data-theme="light"] .ambient-code-card pre span:nth-child(odd) { color: #6c5a9e; }
 @media (max-width: 700px) {
-  .ambient-code-card { width: 145px; opacity: 0.14; }
-  [data-theme="light"] .ambient-code-card { opacity: 0.2; }
+  .floating-technology { opacity: 0.065; width: 54px; }
+  [data-theme="light"] .floating-technology { opacity: 0.06; }
+  .floating-technology img,
+  .floating-technology svg { width: 38px; height: 38px; }
+  .floating-technology span { font-size: 7px; letter-spacing: 0.5px; }
+  .ambient-symbol-2,
+  .ambient-symbol-5 { display: none; }
+  .ambient-symbol-0 { left: 12%; }
+  .ambient-symbol-1 { left: 84%; }
+  .ambient-symbol-3 { left: 13%; top: 320px; }
+  .ambient-symbol-4 { left: 86%; top: 610px; }
+  .ambient-band-first .ambient-symbol-0 { top: 70px; }
+  .ambient-band-first .ambient-symbol-1 { top: 520px; }
+  .ambient-band-first .ambient-symbol-3 { top: 785px; }
+  .ambient-band-first .ambient-symbol-4 { top: 860px; }
+  .ambient-code-card { left: 75%; width: 112px; opacity: 0.1; padding: 9px; }
+  .ambient-band-1 .ambient-code-card { left: 25%; }
+  [data-theme="light"] .ambient-code-card { opacity: 0.13; }
+  .ambient-code-card pre { font-size: 6px; }
+  .ambient-code-glyph { left: 22%; opacity: 0.065; }
+  .ambient-band-1 .ambient-code-glyph { left: 78%; }
+  .ambient-code-glyph > span { font-size: 38px; }
+  .ambient-code-glyph small { font-size: 5px; letter-spacing: 0.5px; }
+  .ambient-circuit { opacity: 0.08; }
+  [data-theme="light"] .ambient-circuit { opacity: 0.1; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ambient-code-card { animation: none; }
