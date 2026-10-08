@@ -1,8 +1,37 @@
-# Rayban
+<div align="center">
+  <img src="public/rayban-logo.svg" width="96" alt="لوگوی رایبان" />
+  <h1>Rayban | رایبان</h1>
+  <p>وب‌سایت معرفی پروژه‌ها و تخصص‌های رایبان، با پنل مدیریت محتوا</p>
+  <p>React · TypeScript · Vite · Three.js · Node.js</p>
+</div>
 
-A Persian-first software and AI studio showcase with an English interface. React 19, TypeScript, Vite, Framer Motion and Three.js; self-hosted Vazirmatn. A local Node.js backend provides authenticated editing and persistent shared content.
+رایبان یک وب‌سایت فارسی و انگلیسی برای معرفی فعالیت‌های نرم‌افزاری، هوش مصنوعی، زیرساخت و طراحی تجربه کاربری است. پروژه‌ها، اعضای تیم و راه‌های ارتباطی در بخش عمومی نمایش داده می‌شوند؛ مدیریت پروژه‌ها و اعضا از پنل ادمین انجام می‌شود.
 
-## Run locally
+## قابلیت‌ها
+
+- رابط فارسی راست‌به‌چپ و انگلیسی چپ‌به‌راست، با ذخیرهٔ انتخاب زبان و تم روشن یا تاریک.
+- طراحی واکنش‌گرا برای دسکتاپ، تبلت و موبایل؛ منوی عمودی و ردیف‌های قابل اسکرول پروژه‌ها و اعضا.
+- نشان سه‌بعدی رایبان با هندسهٔ برداری، بارگذاری تنبل و تصویر جایگزین هنگام نبود WebGL.
+- پس‌زمینه با نمادهای متنوع برنامه‌نویسی، هوش مصنوعی، لینوکس، شبکه و امنیت؛ هر لوگو حداکثر یک‌بار در هر صفحه نمایش داده می‌شود.
+- بخش تعاملی تخصص‌ها با انتخاب از طریق دکمه‌ها یا نمودار و پشتیبانی از کیبورد؛ زمینهٔ شیشه‌ای و کنتراست مناسب در حالت روشن.
+- دکمهٔ «شروع همکاری» و صفحهٔ تماس با تلفن، ایمیل و پیام‌رسان‌ها؛ لوگوهای روبیکا و واتس‌اپ با شکل صحیح و رنگ هماهنگ با تم.
+- پنل مدیریت با ورود امن، ذخیرهٔ مشترک محتوا روی سرور و خروجی/ورودی JSON برای پشتیبان‌گیری.
+- پیش‌رندر صفحات عمومی برای نمایش اولیه و محتوای قابل خواندن برای موتورهای جست‌وجو؛ رعایت تنظیم کاهش حرکت کاربر.
+
+## فناوری‌ها
+
+| بخش | ابزارها |
+| --- | --- |
+| رابط کاربری | React 19، TypeScript، React Router، Vite |
+| طراحی و حرکت | CSS، Tailwind CSS 4، Framer Motion، Lucide |
+| صحنهٔ سه‌بعدی | Three.js، React Three Fiber |
+| فونت | Vazirmatn با میزبانی محلی |
+| سرور و داده | Node.js، فایل‌های JSON محلی، نشست مبتنی بر کوکی |
+| بررسی‌ها | TypeScript، jsdom و اسکریپت‌های بررسی HTTP و پنل مدیریت |
+
+## راه‌اندازی محلی
+
+به **Node.js نسخهٔ 22.12 یا بالاتر** و npm نیاز دارید.
 
 ```sh
 npm ci
@@ -10,40 +39,60 @@ npm run build
 npm start -- --port 4188
 ```
 
-Open http://localhost:4188. The preview command starts the same application and API. The server binds to loopback. Build before starting: the backend imports the compiled content schema from .ssr-build/.
+سایت و API در [http://localhost:4188](http://localhost:4188) در دسترس هستند. سرور به `127.0.0.1` متصل می‌شود. اجرای build پیش از شروع سرور ضروری است، چون سرور از فایل‌های تولیدشده در `.ssr-build/` استفاده می‌کند.
 
-For frontend development, keep the backend running and use:
+### توسعهٔ رابط کاربری
+
+سرور بالا را روشن نگه دارید و در ترمینال دیگری اجرا کنید:
 
 ```sh
 npm run dev -- --port 5188 --strictPort
 ```
 
-Vite proxies /api to port 4188. Node.js 22.12+ is required; this version was tested with Node.js 26.5.
+رابط توسعه در [http://localhost:5188](http://localhost:5188) باز می‌شود. Vite درخواست‌های `/api` را به پورت `4188` می‌فرستد؛ برای ورود ادمین و ذخیرهٔ تغییرات، بک‌اند هم باید اجرا شود. پورت `5188` در فهرست مبدأهای مجاز پیش‌فرض سرور قرار دارد.
 
-## Admin and content
+## ورود و مدیریت محتوا
 
-Visit /admin directly; public pages contain no admin link. On the first local visit, choose a username and a password of at least 12 characters. There is no default password. Afterwards, /admin/login requires those credentials. The old /studio route redirects to the protected admin area.
+مسیر پنل **`/admin`** است: [ورود محلی به پنل](http://localhost:4188/admin). در منوی عمومی سایت لینک ادمین وجود ندارد.
 
-- Add, edit and delete members and projects, including bilingual biographies, skills, social links, project details and contributor assignments.
-- Mark members as current or former collaborators, with an optional collaboration period. Removing a member clears their project assignments.
-- Export JSON backups or import validated files. Import replaces shared content. Invalid references, duplicate IDs, unsafe URLs and malformed data are rejected.
-- Shared content persists in .data/content.json. The account's salted scrypt hash is in .data/admin.json; no plaintext password is stored. Back up this directory privately. It is ignored by Git and not served publicly.
-- Random sessions use HttpOnly, SameSite=Strict cookies, expire after eight hours and are invalidated on logout or server restart. Writes require CSRF protection, an allowed Origin and the current content revision. Login attempts are rate limited.
-- Older browser-local edits are preserved. An explicit import option appears after signing in if a valid legacy backup exists. Import replaces server content and is never automatic.
+1. در اولین اجرا، نام کاربری و رمز عبور حداقل **۱۲ کاراکتری** انتخاب کنید. حساب یا رمز پیش‌فرض وجود ندارد.
+2. پس از ساخت حساب، از `/admin` یا `/admin/login` با همان مشخصات وارد شوید.
+3. پروژه‌ها و اعضا را ایجاد، ویرایش یا حذف کنید؛ عنوان، توضیحات، مهارت‌ها، لینک‌ها و ارتباط اعضا با پروژه‌ها قابل مدیریت هستند.
 
-Ali Hashemi's details were supplied by the owner. Sara Mehr, Armin Rad and Nika Farzan have explicitly fictional demonstration biographies; Nika demonstrates former collaborators. Raein and Bokhar are real projects described from local repository documentation. Three other projects are concept studies. UI previews are HTML/CSS illustrations, not actual product screenshots. Unknown contributors and release dates are not invented.
+اعضای فعلی در صفحهٔ اصلی نمایش داده می‌شوند. همکاران سابق در فهرست کامل تیم باقی می‌مانند و می‌توان برای آن‌ها دورهٔ همکاری ثبت کرد. با حذف عضو، ارتباط او با پروژه‌ها نیز پاک می‌شود.
 
-## Public site
+### داده و پشتیبان‌گیری
 
-- Navy glass and light themes with persisted language preferences. The vertical nav is right in Persian and left in English. Desktop/tablet behavior is preserved. Mobile starts with the logo and a downward chevron. It expands vertically into a compact icon rail of the same width, and closes only through its chevron button.
-- Homepage project and member rows scroll horizontally with touch momentum and proximity snapping, without vertical scrolling. Desktop arrows overlay cards and disappear on touch/tablet/mobile layouts. /projects and /team provide full directories and detail pages.
-- The homepage shows only current members. Former collaborators remain in the full /team directory. The footer has simple links without a repeated name/logo. Public editing links and the old conversation form are removed.
-- Sparse page-anchored Docker, React, Python, GitHub, TypeScript, Kubernetes, PostgreSQL and AI symbols float behind content and respect reduced motion. The neural scene starts automatically on mobile and desktop without a pause/activation button (respecting reduced-motion preferences), is lazy loaded, capped at 24 frames per second and paused outside the viewport. Its Three.js materials and CSS fallback use distinct, coordinated dark/light palettes; mobile floating cards sit behind the core. Mobile navigation adapts to short viewports without scrolling.
-- /contact contains phone, email, Telegram, Eitaa, Rubika, Bale, LinkedIn, GitHub and WhatsApp. Eitaa/Bale use monochrome glyphs derived from their official shapes; Rubika uses a custom outline cube mark. All three inherit the site palette rather than showing original colored badges. Instagram is marked coming soon until the owner creates an account.
+- محتوای مشترک در `.data/content.json` و اطلاعات حساب با هش رمز عبور در `.data/admin.json` ذخیره می‌شود.
+- پوشهٔ `.data/` وارد Git نمی‌شود و به‌صورت فایل عمومی سرو نمی‌شود. برای جابه‌جایی یا نگهداری سایت، از این پوشه به‌صورت خصوصی پشتیبان بگیرید؛ پوش‌کردن کد، حساب ادمین و محتوای ویرایش‌شده را منتقل نمی‌کند.
+- پنل امکان خروجی JSON و واردکردن فایل معتبر را دارد. **ورودی JSON محتوای مشترک را جایگزین می‌کند**؛ پیش از آن خروجی پشتیبان بگیرید.
+- نشست‌ها از کوکی `HttpOnly` و `SameSite` استفاده می‌کنند، پس از هشت ساعت منقضی می‌شوند و با خروج یا راه‌اندازی مجدد سرور باطل می‌شوند. درخواست‌های نوشتن به ورود، مبدأ مجاز، CSRF و نسخهٔ معتبر محتوا نیاز دارند.
 
-Sources are recorded in public/brands/SOURCES.md. The owner-supplied Rayban logo is unchanged.
+## مسیرهای اصلی
 
-## Verification
+| مسیر | کاربرد |
+| --- | --- |
+| `/` | معرفی رایبان، پروژه‌ها، تخصص‌ها و اعضای فعلی |
+| `/projects` | فهرست پروژه‌ها و دسترسی به جزئیات هر پروژه |
+| `/team` | اعضای فعلی و همکاران سابق، با صفحهٔ پروفایل |
+| `/contact` | تلفن، ایمیل و راه‌های ارتباطی |
+| `/admin` | پنل مدیریت محتوا |
+| `/admin/login` | ورود یا ساخت اولین حساب ادمین |
+
+## ساختار پروژه
+
+```text
+src/           رابط React، صفحات، کامپوننت‌ها و سبک‌ها
+public/        لوگوها و فایل‌های عمومی
+server/        سرور HTTP، احراز هویت و API محتوا
+scripts/       پیش‌رندر، بررسی‌ها و تولید هندسهٔ لوگو
+docs/          سوابق بررسی پروژه
+.data/         دادهٔ خصوصی سرور؛ خارج از Git
+dist/          خروجی عمومی build؛ خارج از Git
+.ssr-build/    خروجی سمت سرور؛ خارج از Git
+```
+
+## بررسی پروژه
 
 ```sh
 npm run build
@@ -53,8 +102,18 @@ node scripts/check-server.mjs
 node scripts/check-admin-ui.mjs
 ```
 
-Backend tests use isolated temporary data and never configure the real admin account. The build prerenders 13 public pages. Reports and screenshots are in the ignored qa/ directory; see docs/verification.md for the tracked verification record.
+این بررسی‌ها اعتبار محتوا، تعاملات رابط، احراز هویت و ماندگاری داده و عملکرد پنل را پوشش می‌دهند. تست‌های بک‌اند دادهٔ موقت جداگانه می‌سازند و حساب واقعی ادمین را تغییر نمی‌دهند. سوابق بررسی در [docs/verification.md](docs/verification.md) قرار دارد؛ گزارش‌ها و تصاویر محلی در پوشهٔ نادیده‌گرفته‌شدهٔ `qa/` نگهداری می‌شوند.
 
-## Hosting
+## میزبانی
 
-No remote deployment has been performed. Host the Node application together with dist/ and .ssr-build/; a static-only host cannot provide authenticated writes. Set up the account locally before exposing a deployment, configure the real domain in allowed Origins and metadata, and use HTTPS through a trusted reverse proxy. RAYBAN_SECURE_COOKIE=1 enables Secure cookies for HTTPS. Built HTML contains seed content; browser JavaScript loads current server content. Rebuild to refresh prerendered seed metadata after changing defaults.
+برای پنل فعال، سرور Node.js را همراه `dist/` و `.ssr-build/` اجرا کنید؛ میزبانی صرفاً استاتیک امکان ورود و ذخیرهٔ محتوا را فراهم نمی‌کند. پوشهٔ `.data/` باید پایدار باشد.
+
+پیش از دسترسی عمومی، حساب ادمین را بسازید، دامنهٔ واقعی را در `allowedOrigins` سرور و متادیتای سایت تنظیم کنید و سرور محلی را پشت reverse proxy با HTTPS قرار دهید. تنظیم `RAYBAN_SECURE_COOKIE=1` کوکی‌های امن برای HTTPS را فعال می‌کند. پورت سرور با `--port` یا `RAYBAN_PORT` قابل تغییر است.
+
+HTML پیش‌رندرشده از محتوای اولیه ساخته می‌شود؛ مرورگر محتوای جاری را از API دریافت می‌کند. برای تغییر محتوای اولیهٔ پیش‌رندر، داده‌های پیش‌فرض را به‌روزرسانی و دوباره build کنید.
+
+## محتوا و دارایی‌ها
+
+رائین و بخار پروژه‌های واقعی هستند؛ سه پروژهٔ دیگر مطالعات مفهومی‌اند. اطلاعات علی هاشمی توسط صاحب پروژه ارائه شده و سه پروفایل دیگر نمونه‌های نمایشی با برچسب مشخص هستند. پیش‌نمایش محصولات با HTML/CSS ساخته شده‌اند و اسکرین‌شات محصولات واقعی نیستند. اینستاگرام تا آماده‌شدن حساب با وضعیت «به‌زودی» نمایش داده می‌شود.
+
+منابع نشان‌های فناوری و پیام‌رسان‌ها در [public/brands/SOURCES.md](public/brands/SOURCES.md) ثبت شده‌اند. فایل اصلی لوگوی رایبان حفظ شده و نسخهٔ برداری و هندسهٔ سه‌بعدی از آن تولید می‌شوند. بازتولید آن‌ها با `scripts/trace-logo.py` به Python، Pillow و NumPy نیاز دارد؛ این ابزار برای اجرای معمول سایت لازم نیست.
