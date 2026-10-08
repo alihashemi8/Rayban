@@ -477,7 +477,6 @@ span.messenger-mark {
   :root {
     --navigation-space: 72px;
     --nav-edge: 8px;
-    --mobile-navigation-height: min(calc(100dvh - 16px), max(65dvh, 480px));
   }
   #main-content,
   .site-footer {
@@ -491,7 +490,7 @@ span.messenger-mark {
     top: 8px;
     margin: 0;
     width: 54px;
-    height: var(--mobile-navigation-height);
+    height: auto;
     border-radius: 17px;
   }
   [dir="rtl"] .site-header {
@@ -502,19 +501,25 @@ span.messenger-mark {
     left: 8px;
     right: auto;
   }
-  .site-header .header-inner {
+  .site-header .header-inner,
+  .site-header.mobile-expanded .header-inner {
+    height: auto;
     overflow: hidden;
     padding: 9px 5px;
-    gap: 10px;
-    justify-content: space-between;
+    gap: 8px;
+    justify-content: flex-start;
   }
-  .site-header .rail-top {
+  .site-header .rail-top,
+  .site-header.mobile-expanded .rail-top {
     flex-direction: column;
+    align-items: center;
     gap: 1px;
     padding: 0;
     border: 0;
+    flex-shrink: 0;
   }
-  .site-header .brand {
+  .site-header .brand,
+  .site-header.mobile-expanded .brand {
     width: 42px;
     height: 38px;
   }
@@ -526,74 +531,44 @@ span.messenger-mark {
     width: 42px;
     height: 44px;
   }
-  .site-header .rail-navigation {
-    display: flex;
+  .site-header .rail-navigation,
+  .site-header .header-actions {
+    display: none;
     flex-direction: column;
+    flex-shrink: 0;
     gap: 4px;
   }
-  .site-header .rail-navigation a {
+  .site-header .rail-navigation a,
+  .site-header.mobile-expanded .rail-navigation a {
     justify-content: center;
     padding: 10px 0;
     min-height: 44px;
   }
-  .site-header .rail-navigation a span {
+  .site-header .wordmark,
+  .site-header.mobile-expanded .wordmark,
+  .site-header .rail-navigation a span,
+  .site-header.mobile-expanded .rail-navigation a span,
+  .site-header .header-actions button > span,
+  .site-header.mobile-expanded .header-actions button > span {
     display: none;
   }
   .site-header .header-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
     padding-top: 6px;
   }
-  .site-header .header-actions button > span {
-    display: none;
+  .site-header .header-actions button {
+    min-height: 44px;
+    justify-content: center;
   }
   .site-header.mobile-expanded {
-    width: min(254px, calc(100vw - 16px));
-    height: var(--mobile-navigation-height);
+    width: 54px;
+    height: auto;
     max-height: calc(100dvh - 16px);
   }
-  .site-header.mobile-expanded .header-inner {
-    height: 100%;
-    padding: 12px;
-    gap: 12px;
-    overflow: hidden;
-    justify-content: space-between;
-  }
-  .site-header.mobile-expanded .rail-top {
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--surface-line);
-    padding-bottom: 4px;
-  }
-  .site-header.mobile-expanded .brand {
-    width: auto;
-    height: 38px;
-  }
-  .site-header.mobile-expanded .wordmark {
-    display: block;
-    font-size: 23px;
-  }
-  .site-header.mobile-expanded .rail-navigation {
-    display: flex;
-    flex-direction: column;
-  }
-  .site-header.mobile-expanded .rail-navigation a {
-    justify-content: flex-start;
-    font-size: 13px;
-    padding: 9px 12px;
-    gap: 13px;
-  }
-  .site-header.mobile-expanded .rail-navigation a span {
-    display: inline;
-  }
+  .site-header.mobile-expanded .rail-navigation,
   .site-header.mobile-expanded .header-actions {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-  }
-  .site-header.mobile-expanded .header-actions button > span {
-    display: inline;
+    gap: 4px;
   }
   .wrap {
     width: calc(100% - 28px);

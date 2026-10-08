@@ -25,3 +25,8 @@ The light palette now includes the CSS core fallback, Three.js material/light pr
 The computer-use kernel cannot initialize because of helper_unknown_error: setup refresh had errors. Direct browser interactions, expanded-menu geometry, physical touch smoothness and active WebGL colors could not be visually rechecked through that tool. React interactions were verified in jsdom; Lighthouse screenshots show rendered layouts and the CSS scene fallback. Those are distinct forms of evidence.
 
 Scores are local synthetic measurements. No live-site deployment or physical-device performance guarantee is implied. The first publication to GitHub contains application source and asset references, not admin data. Three demo member biographies and three concept projects remain clearly labeled. Instagram awaits account creation.
+
+## Mobile vertical navigation correction — 2026-10-08
+
+The closed mobile rail contains only the logo and chevron. Opening reveals compact icon navigation below them at the same 54px width; the rail height follows its contents instead of spacing controls across a tall panel. Desktop/tablet rules remain unchanged. Production build, DOM navigation interactions and diff checks passed. The local mobile Lighthouse accessibility audit scored 100. Expanded geometry remains subject to the browser-tool limitation described above.
+

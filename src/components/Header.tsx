@@ -7,7 +7,7 @@ import {
   Code2,
   MessageCircle,
   ChevronDown,
-  X,
+  ChevronUp,
   Sun,
   Moon,
 } from "lucide-react";
@@ -95,7 +95,7 @@ export default function Header({
             )}
             onClick={() => setExpanded(!expanded)}
           >
-            {expanded ? <X size={19} /> : <ChevronDown size={21} />}
+            {expanded ? <ChevronUp size={21} /> : <ChevronDown size={21} />}
           </button>
         </div>
         <nav
