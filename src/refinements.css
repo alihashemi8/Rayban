@@ -805,3 +805,60 @@ span.messenger-mark {
     transition: none;
   }
 }
+
+/* Decorative code windows are spread through the document, never interactive. */
+.ambient-code-card {
+  position: absolute;
+  width: clamp(145px, 17vw, 225px);
+  padding: 12px;
+  border: 1px solid #8daeff4d;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #1b2b4c9c, #111b359c);
+  box-shadow: 0 16px 40px #02081928, inset 0 1px #ffffff14;
+  color: #a8c7f5;
+  opacity: 0.22;
+  transform: rotate(-9deg);
+  animation: technology-drift 24s ease-in-out infinite alternate;
+}
+.ambient-code-card:nth-of-type(even) { transform: rotate(8deg); }
+.ambient-code-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #8daeff28;
+  font: 7px/1.4 monospace;
+}
+.ambient-code-title > span { display: flex; gap: 4px; }
+.ambient-code-title i {
+  width: 4px; height: 4px; border-radius: 50%; background: #ab96ee;
+}
+.ambient-code-title i:nth-child(2) { background: #65c8ce; }
+.ambient-code-card pre {
+  margin: 12px 0;
+  font: clamp(7px, .7vw, 10px)/1.9 monospace;
+  white-space: pre-wrap;
+}
+.ambient-code-card pre span:nth-child(odd) { color: #b6a5eb; }
+.ambient-code-card small {
+  display: flex; align-items: center; gap: 5px;
+  font: 5px/1.5 monospace; letter-spacing: .5px;
+}
+.ambient-code-card small i {
+  width: 4px; height: 4px; background: #66d2c1; border-radius: 50%;
+}
+[data-theme="light"] .ambient-code-card {
+  background: linear-gradient(145deg, #ffffffcc, #dce7fac4);
+  border-color: #708fca5c;
+  color: #3f6095;
+  opacity: 0.3;
+  box-shadow: 0 14px 35px #5675a51a, inset 0 1px #ffffff;
+}
+[data-theme="light"] .ambient-code-card pre span:nth-child(odd) { color: #6c5a9e; }
+@media (max-width: 700px) {
+  .ambient-code-card { width: 145px; opacity: 0.14; }
+  [data-theme="light"] .ambient-code-card { opacity: 0.2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-code-card { animation: none; }
+}

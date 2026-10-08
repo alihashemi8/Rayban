@@ -1,4 +1,4 @@
-import { BrainCircuit, Terminal } from "lucide-react";
+import { BrainCircuit, Terminal, Cpu, Binary, Braces, Workflow, CircuitBoard } from "lucide-react";
 import { useLocation } from "react-router-dom";
 const symbols = [
   { label: "Docker", image: "/brands/docker.svg" },
@@ -10,6 +10,17 @@ const symbols = [
   { label: "Kubernetes", image: "/brands/kubernetes.svg" },
   { label: "PostgreSQL", image: "/brands/postgresql.svg" },
   { label: "Terminal", Icon: Terminal },
+  { label: "Inference", Icon: Cpu },
+  { label: "Algorithms", Icon: Binary },
+  { label: "API", Icon: Braces },
+  { label: "Neural network", Icon: Workflow },
+  { label: "Computing", Icon: CircuitBoard },
+];
+const snippets = [
+  { file: "intelligence.ts", lines: ["const future = await", "rayban.build({", "  ideas: ∞,", "  intelligence: true", "});"], status: "FROM IDEA TO IMPACT" },
+  { file: "model.py", lines: ["from torch import nn", "model = NeuralCore()", "with inference_mode():", "  output = model(ideas)"], status: "NEURAL ENGINE / ONLINE" },
+  { file: "deploy.yml", lines: ["services:", "  intelligence:", "    image: rayban/core", "    replicas: 3", "    health: ready"], status: "BUILD · SHIP · SCALE" },
+  { file: "pipeline.ts", lines: ["const insight = data", "  .map(understand)", "  .filter(relevant)", "  .connect(human);"], status: "HUMAN × MACHINE" },
 ];
 export default function AmbientBackground() {
   const { pathname } = useLocation();
@@ -21,17 +32,29 @@ export default function AmbientBackground() {
   const shown =
     pathname === "/"
       ? symbols
-      : [...symbols, ...symbols].slice(offset, offset + 3);
+      : [...symbols, ...symbols].slice(offset, offset + 5);
   return (
     <div className="ambient-background technical-background" aria-hidden="true">
       <div className="ambient-orb ambient-orb-one" />
       <div className="ambient-orb ambient-orb-two" />
+      {(pathname === "/" ? snippets : snippets.slice(0, 2)).map((snippet, i) => (
+        <div
+          key={snippet.file}
+          className="ambient-code-card"
+          dir="ltr"
+          style={{ top: `${pathname === "/" ? 19 + i * 23 : 28 + i * 45}%`, left: i % 2 ? "76%" : "2%", animationDelay: `-${i * 5}s` }}
+        >
+          <div className="ambient-code-title"><span><i /><i /><i /></span>{snippet.file}</div>
+          <pre>{snippet.lines.map((line, index) => <span key={line}>{line}{index < snippet.lines.length - 1 ? "\n" : ""}</span>)}</pre>
+          <small><i />{snippet.status}</small>
+        </div>
+      ))}
       {shown.map(({ label, image, Icon }, i) => (
         <div
           key={label}
           className={`floating-technology technology-float-${i % 3}`}
           style={{
-            top: `${pathname === "/" ? 10 + i * 10 : 18 + i * 30}%`,
+            top: `${pathname === "/" ? 5 + i * 6.7 : 12 + i * 17}%`,
             left: i % 2 ? "82%" : "5%",
             animationDelay: `-${i * 3}s`,
           }}
