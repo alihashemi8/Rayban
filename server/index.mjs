@@ -98,12 +98,19 @@ export async function createApplication({
         sessions.delete(id);
         session = null;
       }
-      const effectiveOrigins = allowedOrigins || [
+      const envOrigins = (process.env.RAYBAN_ALLOWED_ORIGINS || "")
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+      const defaultOrigins = [
         "http://localhost:" + app.address().port,
         "http://127.0.0.1:" + app.address().port,
         "http://localhost:5188",
         "http://127.0.0.1:5188",
       ];
+      const effectiveOrigins = allowedOrigins
+        ? [...new Set([...allowedOrigins, ...envOrigins])]
+        : [...new Set([...defaultOrigins, ...envOrigins])];
       if (url.pathname.startsWith("/api/")) {
         if (req.method !== "GET") {
           if (!effectiveOrigins.includes(req.headers.origin))
@@ -149,7 +156,12 @@ export async function createApplication({
               return json(res, 409, {
                 error: "حساب ادمین قبلاً ساخته شده است.",
               });
-            if (!["127.0.0.1", "::1", "::ffff:127.0.0.1"].includes(ip))
+            const allowRemoteSetup =
+              process.env.RAYBAN_ALLOW_REMOTE_SETUP === "1";
+            if (
+              !allowRemoteSetup &&
+              !["127.0.0.1", "::1", "::ffff:127.0.0.1"].includes(ip)
+            )
               return json(res, 403, {
                 error: "ایجاد حساب فقط از همین دستگاه مجاز است.",
               });
@@ -323,8 +335,15 @@ if (
   );
   if (!Number.isInteger(port) || port < 1 || port > 65535)
     throw Error("Invalid port");
+  const hostIndex = args.indexOf("--host");
+  const host =
+    hostIndex !== -1
+      ? args[hostIndex + 1]
+      : process.env.RAYBAN_HOST || "127.0.0.1";
   const app = await createApplication();
-  app.listen(port, "127.0.0.1", () =>
-    console.log(`Rayban site and admin API: http://localhost:${port}`),
+  app.listen(port, host, () =>
+    console.log(
+      `Rayban site and admin API: http://${host === "0.0.0.0" ? "localhost" : host}:${port}`,
+    ),
   );
 }

@@ -1,0 +1,21 @@
+services:
+  rayban:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rayban-studio
+    restart: unless-stopped
+    ports:
+      - "4188:4188"
+    environment:
+      - NODE_ENV=production
+      - RAYBAN_HOST=0.0.0.0
+      - RAYBAN_PORT=4188
+      # Comma-separated list of allowed production domains for admin panel API
+      # - RAYBAN_ALLOWED_ORIGINS=https://rayban.studio,https://www.rayban.studio
+      # Set to 1 when serving over HTTPS behind a reverse proxy (e.g. Nginx, Caddy)
+      # - RAYBAN_SECURE_COOKIE=1
+      # Set to 1 to allow initial admin setup from any remote IP (disabled by default)
+      # - RAYBAN_ALLOW_REMOTE_SETUP=1
+    volumes:
+      - ./.data:/app/.data

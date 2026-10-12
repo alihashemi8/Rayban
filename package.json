@@ -7,7 +7,8 @@
     "dev": "vite --configLoader runner --host 0.0.0.0",
     "build": "tsc -b && vite build --configLoader runner && vite build --ssr src/entry-server.tsx --configLoader runner --outDir .ssr-build && node scripts/prerender.mjs",
     "preview": "node server/index.mjs",
-    "start": "node server/index.mjs"
+    "start": "node server/index.mjs",
+    "create-admin": "node scripts/create-admin.mjs"
   },
   "dependencies": {
     "@fontsource-variable/vazirmatn": "^5.2.6",
