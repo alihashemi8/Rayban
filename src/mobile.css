@@ -326,7 +326,19 @@
     gap: 9px;
   }
   .portfolio-toolbar {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+  .portfolio-toolbar .filters {
+    width: 100%;
+  }
+  .team-group-heading {
+    flex-wrap: wrap;
+    gap: 12px;
   }
   .filters {
     display: grid;

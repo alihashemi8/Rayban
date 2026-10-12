@@ -151,22 +151,22 @@ export default function TeamSection({
             )}
           </div>
         </div>
-        {!full && (
-          <div className="team-directory-action">
-            <Link className="show-all button" to="/team">
-              <Users size={17} />
-              {phrase(lang, "همه اعضا", "All members")}
-              <ArrowUpLeft size={17} />
-            </Link>
-          </div>
-        )}
         {groups
           .filter((group) => full || group.id === "current")
           .map((group) => (
             <div className="team-group" key={group.id}>
               <div className="team-group-heading">
-                <GroupHeading>{phrase(lang, group.fa, group.en)}</GroupHeading>
-                <span>{group.list.length}</span>
+                <div className="team-group-heading-main">
+                  <GroupHeading>{phrase(lang, group.fa, group.en)}</GroupHeading>
+                  <span>{group.list.length}</span>
+                </div>
+                {!full && group.id === "current" && (
+                  <Link className="show-all button" to="/team">
+                    <Users size={17} />
+                    {phrase(lang, "همه اعضا", "All members")}
+                    <ArrowUpLeft size={17} />
+                  </Link>
+                )}
               </div>
               {group.id === "former" && (
                 <p className="team-group-description">

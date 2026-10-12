@@ -157,7 +157,7 @@
     8px 12px 0 #6a86b011,
     0 15px 35px #41638d19;
 }
-[data-theme="light"] :is(.profile-index, .team-group-heading > span) {
+[data-theme="light"] :is(.profile-index, .team-group-heading > span, .team-group-heading-main > span) {
   color: #566e91;
 }
 [data-theme="light"] .demo-badge {

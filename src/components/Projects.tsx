@@ -90,7 +90,7 @@ export default function Projects({ lang, full = false }: { lang: Language; full?
           </div>
           {!full ? (
             <Link className="show-all button" to="/projects">
-              {phrase(lang, "نمایش همه", "View all projects")}
+              {phrase(lang, "نمایش همه پروژه‌ها", "View all projects")}
               <ArrowUpLeft size={17} />
             </Link>
           ) : (

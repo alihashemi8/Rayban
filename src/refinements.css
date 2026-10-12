@@ -147,24 +147,28 @@
   color: #345993;
   border-color: #7899cc50;
 }
-.team-directory-action {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
-}
 .team-group {
   margin-top: 32px;
 }
 .team-group-heading {
   display: flex;
   align-items: center;
-  gap: 13px;
+  justify-content: space-between;
+  gap: 16px;
   margin-bottom: 18px;
 }
+.team-group-heading-main {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.team-group-heading-main h2,
+.team-group-heading-main h3,
 .team-group-heading h2,
 .team-group-heading h3 {
   font-size: 22px;
 }
+.team-group-heading-main > span,
 .team-group-heading > span {
   color: var(--muted);
   font-size: 12px;
@@ -732,6 +736,7 @@ span.messenger-mark {
   .team-grid.card-rail {
     grid-auto-columns: calc(100% - 14px);
     gap: 14px;
+    padding-top: 4px;
   }
   .project-rail .project-card {
     height: 500px;
@@ -749,6 +754,8 @@ span.messenger-mark {
   .team-directory .team-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+  .team-group-heading-main h3,
+  .team-group-heading-main h2,
   .team-group-heading h3,
   .team-group-heading h2 {
     font-size: 19px;
