@@ -951,17 +951,76 @@ h2 > span {
   bottom: 14px;
   font-size: 6px;
 }
+.role-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  background: #ffffff03;
+  border: 1px solid #ffffff0c;
+  border-radius: 12px;
+  margin-top: 26px;
+  width: fit-content;
+  max-width: 100%;
+}
 .role-tabs button {
-  color: #a9bbda;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
   border-radius: 8px;
+  border: 1px solid transparent;
+  color: #a7b6d2;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+.role-tabs button:first-child {
+  padding-inline-start: 18px;
+  padding-inline-end: 18px;
+}
+.role-tabs button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
 }
 .role-tabs button.active {
-  background: #4d67a233;
-  color: #d9e8ff;
-  border-color: #88b2ff50;
+  background: #344c7d65;
+  border-color: rgba(144, 180, 255, 0.25);
+  color: #dae7ff;
+  box-shadow: inset 0 1px 0 #ffffff10;
 }
 .role-description {
-  color: #a8bedf;
+  color: #b8cde8;
+  font-size: 13.5px !important;
+  line-height: 1.95;
+  margin-top: 22px;
+  padding: 18px 22px;
+  background: rgba(18, 30, 56, 0.45);
+  border: 1px solid rgba(136, 178, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  min-height: 96px;
+  transition: all 0.25s ease;
+}
+.role-description::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  right: -1px;
+  width: 3px;
+  background: linear-gradient(180deg, #608ef6, #88b2ff);
+  border-radius: 2px;
+}
+[dir="ltr"] .role-description::before {
+  right: auto;
+  left: -1px;
 }
 .team-section {
   background: linear-gradient(180deg, #12182d60, #071020);

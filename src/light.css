@@ -292,15 +292,32 @@
 [data-theme="light"] .ecosystem-copy > p {
   color: var(--muted);
 }
+[data-theme="light"] .ecosystem-section .role-tabs {
+  background: rgba(183, 206, 243, 0.18);
+  border-color: #cbd8ec;
+}
 [data-theme="light"] .ecosystem-section .role-tabs button {
-  color: #405777;
-  background: #f6f9ff;
-  border-color: #7a92b6;
+  color: #526581;
+  background: transparent;
+  border-color: transparent;
+}
+[data-theme="light"] .ecosystem-section .role-tabs button:hover {
+  color: #1c4075;
+  background: rgba(255, 255, 255, 0.6);
 }
 [data-theme="light"] .ecosystem-section :is(.role-tabs button.active, .map-node.active) {
-  color: #fff;
-  background: #385989;
-  border-color: #385989;
+  color: #1c4075;
+  background: #d4e3f8;
+  border-color: #9cbce8;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+[data-theme="light"] .ecosystem-section .role-description {
+  background: #f4f8fd;
+  border-color: #d1dfef;
+  color: #2e476b;
+}
+[data-theme="light"] .ecosystem-section .role-description::before {
+  background: linear-gradient(180deg, #2b4970, #4b74ad);
 }
 [data-theme="light"] .ecosystem-section :is(.role-tabs button, .map-node):hover {
   border-color: #385989;

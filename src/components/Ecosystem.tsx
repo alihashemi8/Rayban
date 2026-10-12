@@ -9,28 +9,28 @@ export default function Ecosystem({ lang }: { lang: Language }) {
   const [active, setActive] = useState(0);
   const roles = [
     [
-      "نرم‌افزار و موبایل",
-      "Software & Mobile",
-      "توسعه اپلیکیشن‌های موبایل، وب و API؛ از وب‌سرویس‌ها تا اپ‌های کاربردی و سیستم‌های یکپارچه مدیریت.",
-      "Building mobile apps, web applications and APIs; from client platforms to management systems.",
+      "وب و موبایل",
+      "Web & Mobile",
+      "طراحی و پیاده‌سازی اپلیکیشن‌های پیشرفته موبایل (iOS و Android)، سامانه‌های مدرن تحت وب و وب‌سرویس‌های مقیاس‌پذیر. سیستم‌ها از منطق پیچیده کسب‌وکار تا تجربه روان کاربری، با کد تمیز، معماری ماژولار و آزمون‌های خودکار استاندارد توسعه داده می‌شوند.",
+      "Engineering high-performance mobile apps (iOS & Android), modern web platforms, and scalable backend APIs. From complex business logic to fluid user experiences, every system is built with clean code, modular architecture, and automated testing.",
     ],
     [
       "هوش مصنوعی",
-      "AI",
-      "ساخت دستیارهای متنی و قابلیت‌های مبتنی بر مدل‌های زبانی، با توجه به زمینه محصول و بررسی کیفیت پاسخ‌ها.",
-      "Building text assistants and language-model features, grounded in the product context and evaluated for response quality.",
+      "Applied AI",
+      "توسعه دستیارهای هوشمند سازمانی، پایپ‌لاین‌های بازیابی دانش (RAG) و پردازش زبان طبیعی متصل به داده‌های اختصاصی. تمرکز ما بر خلق ارزش عملیاتی ملموس، امنیت و ایزولاسیون کامل داده‌ها، و سنجش پیوسته دقت و کیفیت پاسخ‌هاست.",
+      "Deploying enterprise AI assistants, knowledge retrieval pipelines (RAG), and natural language processing grounded in organizational data. We prioritize measurable operational value, strict data isolation, and continuous evaluation of response precision.",
     ],
     [
-      "زیرساخت",
-      "Infrastructure",
-      "آماده‌سازی محیط اجرا، استقرار با Docker و پایش سرویس‌ها؛ برای نگهداری و به‌روزرسانی محصول.",
-      "Setting up runtime environments, deploying with Docker and monitoring services to maintain and update the product.",
+      "زیرساخت ابری",
+      "Cloud & DevOps",
+      "معماری پایگاه‌های داده پایدار، کانتینرسازی با Docker و راه‌اندازی خطوط خودکار استقرار (CI/CD). سرویس‌ها همراه با پایش ۲۴/۷ سلامت، کشینگ چندلایه و سیاست‌های دسترسی مداوم مهندسی می‌شوند تا ترافیک بالا بدون افت کارایی مدیریت شود.",
+      "Architecting reliable databases, Docker containerization, and automated CI/CD deployment pipelines. Services are engineered with 24/7 health monitoring, multi-tier caching, and high-availability failover to handle heavy workloads with uninterrupted stability.",
     ],
     [
       "تجربه کاربری",
-      "Experience",
-      "طراحی مسیرهای کاربر و رابط‌های خوانا و واکنش‌گرا برای موبایل و دسکتاپ؛ با توجه به بازخورد و استفاده روزمره.",
-      "Designing clear workflows and readable interfaces for mobile and desktop, informed by feedback and everyday use.",
+      "Product & UX",
+      "تبدیل جریان‌های کاری پیچیده به رابط‌های کاربری چشم‌نواز، شهودی و دسترس‌پذیر برای موبایل و دسکتاپ. از سیستم‌های طراحی منسجم (Design Systems) تا ریزتعامل‌های ظریف، طراحی محصول در رایبان بر مبنای کاهش اصطکاک و ارتقای سهولت کاربری شکل می‌گیرد.",
+      "Transforming complex workflows into intuitive, engaging, and accessible interfaces across mobile and desktop. Guided by cohesive design systems and user-behavior insights, we craft digital products that eliminate friction and maximize usability.",
     ],
   ];
 
