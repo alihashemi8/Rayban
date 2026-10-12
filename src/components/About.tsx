@@ -38,8 +38,8 @@ export default function About({ lang }: { lang: Language }) {
               <p className="large-body">
                 {phrase(
                   lang,
-                  "در تیم رایبان، توسعه نرم‌افزار با درک عمیق از منطق کسب‌وکار و نیاز کاربران آغاز می‌شود. پیش از هر خط کد، معماری سرویس، مدل داده و جریان‌های اصلی سیستم را با دقت طراحی می‌کنیم.",
-                  "At Rayban, software development begins with a clear understanding of business logic and user workflows. We design service architecture, data models and core workflows before implementation.",
+                  "در تیم رایبان، توسعه سامانه‌های وب و اپلیکیشن‌های موبایل با درک عمیق از منطق کسب‌وکار و نیاز کاربران آغاز می‌شود. پیش از هر خط کد، معماری سرویس، مدل داده و جریان‌های اصلی سیستم را با دقت طراحی می‌کنیم.",
+                  "At Rayban, web and mobile product development begins with a clear understanding of business logic and user workflows. We design service architecture, data models and core workflows before implementation.",
                 )}
               </p>
               <p>

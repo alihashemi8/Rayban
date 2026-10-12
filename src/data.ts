@@ -6,24 +6,24 @@ export const projects = [
     id: "learning-ecosystem",
     number: "01",
     title: ["پلتفرم جامع آموزش و مدارس", "Unified School Platform"],
-    category: ["سامانه تحت وب", "Web Platform"],
+    category: ["سامانه تحت وب و موبایل", "Web & Mobile Platform"],
     description: [
-      "سامانه متمرکز برای مدیریت آموزش، مدارس و پیگیری پیشرفت تحصیلی دانش‌آموزان با دسترسی‌های چندسطحی.",
-      "A centralized platform for school management, learning workflows and student progress tracking with role-based access.",
+      "سامانه متمرکز برای مدیریت آموزش و مدارس، همراه با اپلیکیشن موبایل دانش‌آموزان و اولیا با دسترسی‌های چندسطحی.",
+      "A centralized platform for school management and mobile companion app for students and parents with role-based access.",
     ],
-    stack: ["React", "Django", "PostgreSQL"],
+    stack: ["React", "React Native", "Django", "PostgreSQL"],
     visual: "school",
     color: "sage",
     features: [
       "مدیریت چندسطحی نقش‌ها و کاربران",
       "مسیر ارزیابی و گزارش‌های پیشرفت",
-      "ارتباط هدفمند معلمان با اولیا",
+      "اپلیکیشن موبایل اولیا و دانش‌آموزان",
       "داشبورد تحلیلی و کارنامه تحصیلی",
     ],
     enFeatures: [
       "Multi-level role and user management",
       "Progress tracking and evaluation paths",
-      "Structured teacher-family communication",
+      "Mobile companion app for parents & students",
       "Analytical dashboards and grade reports",
     ],
   },
@@ -80,16 +80,16 @@ export const projects = [
 ] as const;
 export const specialties = [
   {
-    role: ["مهندسی فرانت‌اند", "Frontend engineering"],
+    role: ["فرانت‌اند و موبایل", "Frontend & mobile"],
     initial: "FE",
-    skills: ["React", "TypeScript", "Design systems"],
+    skills: ["React", "React Native", "TypeScript", "Design systems"],
     bio: [
-      "توسعه رابط‌های کاربری سریع، واکنش‌گرا و دسترس‌پذیر با رعایت اصول معماری کامپوننت و عملکرد بهینه.",
-      "Building fast, responsive and accessible user interfaces with clean component architecture and optimized performance.",
+      "توسعه رابط‌های کاربری وب و اپلیکیشن‌های موبایل با رعایت اصول معماری کامپوننت، سرعت بالا و دسترسی‌پذیری.",
+      "Building web interfaces and mobile applications with clean component architecture, high performance and accessibility.",
     ],
     contribution: [
-      "معماری فرانت‌اند و سیستم‌های طراحی",
-      "Frontend architecture and design systems",
+      "معماری وب و اپلیکیشن‌های موبایل",
+      "Web architecture and mobile applications",
     ],
   },
   {
@@ -119,22 +119,22 @@ export const specialties = [
 export const technologies = [
   {
     id: "interface",
-    label: ["تجربه و رابط", "Interface"],
-    names: ["React", "TypeScript", "Tailwind CSS"],
+    label: ["وب و موبایل", "Web & Mobile"],
+    names: ["React", "React Native", "TypeScript", "Tailwind CSS"],
     title: [
-      "رابط‌های کاربری سریع و دسترس‌پذیر",
-      "Fast, accessible user interfaces",
+      "رابط‌های وب و اپلیکیشن‌های موبایل",
+      "Web interfaces & mobile applications",
     ],
     text: [
-      "پیاده‌سازی رابط‌های یکپارچه و بهینه‌شده برای انواع نمایشگرها؛ با تمرکز بر سرعت بارگذاری، استانداردهای سئو و تجربه روان کاربر.",
-      "Consistent, fast and responsive interfaces built for every screen, focused on loading speed, SEO standards and seamless UX.",
+      "طراحی و توسعه رابط‌های کاربری وب و اپلیکیشن‌های موبایل (iOS و Android)؛ با تمرکز بر سرعت، استانداردهای طراحی و تجربه روان کاربر.",
+      "Engineering responsive web interfaces and mobile applications (iOS & Android), built for performance, design standards and fluid user experiences.",
     ],
     code: [
-      "interface UIConfig {",
+      "interface AppConfig {",
+      '  platforms: ["web", "ios", "android"];',
       '  theme: "system" | "dark" | "light";',
       '  direction: "rtl" | "ltr";',
       "  responsive: true;",
-      "  performance: 100;",
       "};",
     ],
   },

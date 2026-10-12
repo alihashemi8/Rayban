@@ -12,7 +12,7 @@ export default function FocusStrip({ lang }: { lang: Language }) {
         {[
           ["سامانه‌های آموزشی", "Educational platforms"],
           ["هوش مصنوعی کاربردی", "Applied AI"],
-          ["نرم‌افزارهای تحت وب", "Web applications"],
+          ["وب و اپلیکیشن موبایل", "Web & mobile apps"],
           ["زیرساخت و پایگاه داده", "Data & infrastructure"],
         ].map(([fa, en], i) => (
           <div key={en}>

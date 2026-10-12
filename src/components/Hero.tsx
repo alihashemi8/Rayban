@@ -27,8 +27,8 @@ export default function Hero({ lang, theme }: { lang: Language; theme: Theme }) 
         <p className="hero-description">
           {phrase(
             lang,
-            "ما در تیم رایبان، سامانه‌های نرم‌افزاری پایدار و راهکارهای هوش مصنوعی را برای مسائل واقعی کسب‌وکارها طراحی و پیاده‌سازی می‌کنیم.",
-            "At Rayban, we build resilient software and applied AI solutions tailored to real-world challenges.",
+            "ما در تیم رایبان، سامانه‌های نرم‌افزاری پایدار، اپلیکیشن‌های موبایل و راهکارهای هوش مصنوعی را برای مسائل واقعی کسب‌وکارها طراحی و پیاده‌سازی می‌کنیم.",
+            "At Rayban, we build resilient software systems, mobile applications and applied AI solutions tailored to real-world challenges.",
           )}
         </p>
         <div className="hero-actions">
@@ -50,8 +50,8 @@ export default function Hero({ lang, theme }: { lang: Language; theme: Theme }) 
           <span>
             {phrase(
               lang,
-              "معماری استاندارد • عملکرد پایدار • کد آزموده‌شده",
-              "Standard architecture • Reliable performance • Tested code",
+              "معماری استاندارد • وب و اپلیکیشن موبایل • کد آزموده‌شده",
+              "Standard architecture • Web & mobile apps • Tested code",
             )}
           </span>
         </div>

@@ -9,10 +9,10 @@ export default function Ecosystem({ lang }: { lang: Language }) {
   const [active, setActive] = useState(0);
   const roles = [
     [
-      "نرم‌افزار",
-      "Software",
-      "توسعه رابط کاربری، منطق سمت سرور و API؛ از وب‌سایت تا سامانه‌های مدیریت و خدمات آنلاین.",
-      "Building interfaces, backend logic and APIs for websites, management systems and online services.",
+      "نرم‌افزار و موبایل",
+      "Software & Mobile",
+      "توسعه اپلیکیشن‌های موبایل، وب و API؛ از وب‌سرویس‌ها تا اپ‌های کاربردی و سیستم‌های یکپارچه مدیریت.",
+      "Building mobile apps, web applications and APIs; from client platforms to management systems.",
     ],
     [
       "هوش مصنوعی",
@@ -29,7 +29,7 @@ export default function Ecosystem({ lang }: { lang: Language }) {
     [
       "تجربه کاربری",
       "Experience",
-      "طراحی مسیرهای کاربر و رابط‌های خوانا برای موبایل و دسکتاپ؛ با توجه به بازخورد و استفاده روزمره.",
+      "طراحی مسیرهای کاربر و رابط‌های خوانا و واکنش‌گرا برای موبایل و دسکتاپ؛ با توجه به بازخورد و استفاده روزمره.",
       "Designing clear workflows and readable interfaces for mobile and desktop, informed by feedback and everyday use.",
     ],
   ];
@@ -51,8 +51,8 @@ export default function Ecosystem({ lang }: { lang: Language }) {
           <p>
             {phrase(
               lang,
-              "در رایبان، مهندسی بک‌اند، فرانت‌اند، زیرساخت ابری و هوش مصنوعی در یک فرایند منسجم کنار هم قرار می‌گیرند تا سامانه‌ای کامل و مطمئن تحویل داده شود.",
-              "At Rayban, backend, frontend, cloud infrastructure and applied AI work together in a cohesive workflow to deliver complete, dependable systems.",
+              "در رایبان، مهندسی بک‌اند، فرانت‌اند، اپلیکیشن‌های موبایل، زیرساخت ابری و هوش مصنوعی در یک فرایند منسجم کنار هم قرار می‌گیرند تا سامانه‌ای کامل و مطمئن تحویل داده شود.",
+              "At Rayban, backend, frontend, mobile apps, cloud infrastructure and applied AI work together in a cohesive workflow to deliver complete, dependable systems.",
             )}
           </p>
           <div
