@@ -122,30 +122,30 @@ export default function TeamSection({
       <div className="wrap">
         <div className="section-label">
           <span className="signal-dot" />
-          {phrase(lang, "آدم‌های پشت ایده‌ها", "PEOPLE BEHIND THE IDEAS")}
+          {phrase(lang, "تیم مهندسی رایبان", "RAYBAN ENGINEERING TEAM")}
         </div>
         <div className="section-heading">
           <Heading>
-            {phrase(lang, "نگاه‌های متفاوت.", "Different perspectives.")}
+            {phrase(lang, "تخصص‌های مکمل،", "Connected expertise,")}
             <br />
             <span>
-              {phrase(lang, "یک مسیر مشترک.", "One shared direction.")}
+              {phrase(lang, "یک هدف مشترک.", "one shared mission.")}
             </span>
           </Heading>
           <div>
             <p>
               {phrase(
                 lang,
-                "قدرت یک تیم در کنار هم قرار گرفتن تخصص‌هاست. ما با هم فکر می‌کنیم، می‌سازیم و یاد می‌گیریم.",
-                "A team’s strength is in its connected expertise. We think, build and learn together.",
+                "هم‌افزایی تخصص‌های مهندسی نرم‌افزار، معماری پایگاه داده، فرانت‌اند و هوش مصنوعی در استودیوی رایبان.",
+                "Connected expertise across software engineering, database architecture, frontend and applied AI at Rayban.",
               )}
             </p>
             {members.some((m) => m.demo) && (
               <span className="sample-note">
                 {phrase(
                   lang,
-                  "پروفایل‌های دارای برچسب نمایشی، رزومه ساختگی برای نمایش UI دارند.",
-                  "Profiles marked Demo have fictional biographies for UI preview.",
+                  "در کنار اعضای اصلی، ساختار تخصص‌ها و موقعیت‌های کلیدی استودیو معرفی شده است.",
+                  "Key studio specializations and collaboration roles are outlined alongside core team members.",
                 )}
               </span>
             )}
@@ -172,8 +172,8 @@ export default function TeamSection({
                 <p className="team-group-description">
                   {phrase(
                     lang,
-                    "همکارانی که بخشی از مسیر رایبان را با ما ساخته‌اند؛ امروز همراه ما نیستند، اما سهمشان در این مسیر ماندگار است.",
-                    "People who helped shape Rayban along the way. Their contributions remain part of our story.",
+                    "متخصصانی که در فازهای مختلف همراه تیم رایبان بوده‌اند و در توسعه پروژه‌های استودیو مشارکت داشته‌اند.",
+                    "Specialists who collaborated with the Rayban team and contributed to our engineering projects.",
                   )}
                 </p>
               )}

@@ -17,40 +17,44 @@ const channels = [
   {
     fa: "تلگرام",
     en: "Telegram",
-    url: "https://t.me/ali_hashemi8",
+    url: "https://t.me/rayban",
     Icon: Send,
+    handle: "rayban",
   },
   {
     fa: "ایتا",
     en: "Eitaa",
-    url: "https://eitaa.com/ali_hashemi8",
+    url: "https://eitaa.com/rayban",
     brand: "eitaa" as const,
+    handle: "rayban",
   },
   {
     fa: "روبیکا",
     en: "Rubika",
-    url: "https://rubika.ir/ali_hashemi8",
+    url: "https://rubika.ir/rayban",
     brand: "rubika" as const,
+    handle: "rayban",
   },
   {
     fa: "بله",
     en: "Bale",
-    url: "https://ble.ir/ali_hashemi8",
+    url: "https://ble.ir/rayban",
     brand: "bale" as const,
+    handle: "rayban",
   },
   {
     fa: "لینکدین",
     en: "LinkedIn",
-    url: "https://www.linkedin.com/in/alihashemi8/",
+    url: "https://www.linkedin.com/company/rayban/",
     Icon: Linkedin,
-    handle: "alihashemi8",
+    handle: "rayban",
   },
   {
     fa: "گیت‌هاب",
     en: "GitHub",
-    url: "https://github.com/alihashemi8",
+    url: "https://github.com/rayban",
     Icon: Github,
-    handle: "alihashemi8",
+    handle: "rayban",
   },
   {
     fa: "واتس‌اپ",
@@ -64,7 +68,7 @@ const channels = [
     en: "Instagram",
     url: "",
     Icon: Instagram,
-    handle: "ali_hashemi8",
+    handle: "rayban",
   },
 ];
 
@@ -79,18 +83,18 @@ export default function ContactPage({ lang }: { lang: Language }) {
         <div className="page-intro">
           <span className="eyebrow">
             <span className="signal-dot" />
-            {phrase(lang, "شروع یک گفت‌وگو", "LET’S TALK")}
+            {phrase(lang, "شروع همکاری", "LET’S TALK")}
           </span>
           <h1>
-            {phrase(lang, "از یک گفت‌وگو،", "One conversation.")}
+            {phrase(lang, "پروژه‌ای در ذهن دارید؟", "Have a project in mind?")}
             <br />
-            <span>{phrase(lang, "تا ایده بعدی.", "Your next idea.")}</span>
+            <span>{phrase(lang, "همراه شما در ساخت آن هستیم.", "Let's build it together.")}</span>
           </h1>
           <p>
             {phrase(
               lang,
-              "برای معرفی ایده، سؤال درباره پروژه‌ها یا شروع همکاری، از راهی که راحت‌ترید با علی هاشمی در ارتباط باشید.",
-              "Reach Ali Hashemi through your preferred channel to share an idea, ask about a project or discuss working together.",
+              "برای بررسی نیازمندی‌های پروژه، برآورد فنی یا آغاز همکاری، از راه‌های زیر با تیم رایبان در ارتباط باشید.",
+              "Reach out to the Rayban team through your preferred channel to discuss project requirements, technical scoping or collaboration.",
             )}
           </p>
         </div>
@@ -105,13 +109,13 @@ export default function ContactPage({ lang }: { lang: Language }) {
             </div>
             <ArrowUpRight size={21} />
           </a>
-          <a className="contact-channel" href="mailto:alihashemi5553@gmail.com">
+          <a className="contact-channel" href="mailto:contact@rayban.studio">
             <span className="channel-icon">
               <Mail size={25} />
             </span>
             <div>
-              <h2>{phrase(lang, "ایمیل", "Email")}</h2>
-              <span dir="ltr">alihashemi5553@gmail.com</span>
+              <h2>{phrase(lang, "ایمیل استودیو", "Email us")}</h2>
+              <span dir="ltr">contact@rayban.studio</span>
             </div>
             <ArrowUpRight size={21} />
           </a>
@@ -120,8 +124,8 @@ export default function ContactPage({ lang }: { lang: Language }) {
           <h2>
             {phrase(
               lang,
-              "ارتباط از طریق پیام رسان ها",
-              "Connect through messengers",
+              "پیام‌رسان‌ها و شبکه‌های اجتماعی",
+              "Messengers & social channels",
             )}
           </h2>
           <span className="mono">SOCIAL / CONNECT</span>
@@ -147,7 +151,7 @@ export default function ContactPage({ lang }: { lang: Language }) {
                 </span>
                 <div>
                   <h3>{phrase(lang, fa, en)}</h3>
-                  <span dir="ltr">@{handle ?? "ali_hashemi8"}</span>
+                  <span dir="ltr">@{handle ?? "rayban"}</span>
                   {!url && (
                     <small className="channel-pending">
                       {phrase(

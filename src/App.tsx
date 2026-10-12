@@ -194,27 +194,27 @@ function Hero({ lang, theme }: { lang: Language; theme: Theme }) {
           <span className="signal-dot" />
           {phrase(
             lang,
-            "استودیوی نرم‌افزار و هوش مصنوعی",
-            "SOFTWARE & ARTIFICIAL INTELLIGENCE STUDIO",
+            "استودیوی نرم‌افزار و هوش مصنوعی رایبان",
+            "RAYBAN SOFTWARE & ARTIFICIAL INTELLIGENCE STUDIO",
           )}
         </div>
         <h1>
-          {phrase(lang, "ایده‌های جسورانه.", "Bold ideas.")}
+          {phrase(lang, "مهندسی نرم‌افزار.", "Software engineering.")}
           <br />
           <span>
-            {phrase(lang, "سیستم‌های هوشمند.", "Intelligent systems.")}
+            {phrase(lang, "سامانه‌های هوشمند.", "Intelligent systems.")}
           </span>
         </h1>
         <p className="hero-description">
           {phrase(
             lang,
-            "ما رایبان هستیم. جایی که مهندسی نرم‌افزار، طراحی و هوش مصنوعی کنار هم قرار می‌گیرند تا ایده شما به یک تجربه دیجیتال ماندگار تبدیل شود.",
-            "We are Rayban. Where software engineering, design and artificial intelligence come together to turn your idea into a lasting digital experience.",
+            "ما در تیم رایبان، سامانه‌های نرم‌افزاری پایدار و راهکارهای هوش مصنوعی را برای مسائل واقعی کسب‌وکارها طراحی و پیاده‌سازی می‌کنیم.",
+            "At Rayban, we build resilient software and applied AI solutions tailored to real-world challenges.",
           )}
         </p>
         <div className="hero-actions">
           <a href="#projects" className="button button-dark">
-            {phrase(lang, "کاوش در پروژه‌ها", "Explore our work")}
+            {phrase(lang, "مشاهده پروژه‌ها", "Explore our work")}
             <ArrowUpLeft size={19} />
           </a>
           <Link to="/contact" className="button button-light">
@@ -231,8 +231,8 @@ function Hero({ lang, theme }: { lang: Language; theme: Theme }) {
           <span>
             {phrase(
               lang,
-              "تفکر انسانی. مهندسی دقیق. تأثیر ماندگار.",
-              "Human thinking. Precise engineering. Lasting impact.",
+              "معماری استاندارد • عملکرد پایدار • کد آزموده‌شده",
+              "Standard architecture • Reliable performance • Tested code",
             )}
           </span>
         </div>
@@ -244,14 +244,14 @@ function Hero({ lang, theme }: { lang: Language; theme: Theme }) {
       <div className="hero-bottom">
         <a href="#projects">
           <ArrowDown size={15} />
-          {phrase(lang, "برای کشف بیشتر، پایین بروید", "Scroll to discover")}
+          {phrase(lang, "برای مشاهده پروژه‌ها، اسکرول کنید", "Scroll to explore")}
         </a>
-        <span dir="ltr">INDEPENDENT MINDS. CONNECTED VISION.</span>
+        <span dir="ltr">COLLABORATIVE ENGINEERING · RELIABLE SYSTEMS</span>
         <span>
           {phrase(
             lang,
-            "ساخته‌شده با فکر، در ایران",
-            "Thoughtfully built in Iran",
+            "استودیوی فناوری رایبان",
+            "Rayban Technology Studio",
           )}
           <span className="tiny-square" />
         </span>
@@ -264,13 +264,13 @@ function FocusStrip({ lang }: { lang: Language }) {
     <div className="focus-strip">
       <div className="wrap">
         <span>
-          {phrase(lang, "جهان‌هایی که می‌سازیم", "THE WORLDS WE BUILD")}
+          {phrase(lang, "حوزه‌های تخصصی فعالیت", "CORE FOCUS AREAS")}
         </span>
         {[
-          ["آموزش هوشمند", "Intelligent education"],
-          ["هوش مصنوعی", "Artificial intelligence"],
-          ["نرم‌افزار کسب‌وکار", "Business software"],
-          ["تجربه‌های دیجیتال", "Digital experiences"],
+          ["سامانه‌های آموزشی", "Educational platforms"],
+          ["هوش مصنوعی کاربردی", "Applied AI"],
+          ["نرم‌افزارهای تحت وب", "Web applications"],
+          ["زیرساخت و پایگاه داده", "Data & infrastructure"],
         ].map(([fa, en], i) => (
           <div key={en}>
             {
@@ -312,15 +312,15 @@ function Projects({ lang, full = false }: { lang: Language; full?: boolean }) {
           <Heading>
             {phrase(
               lang,
-              full ? "از ایده تا اجرا،" : "ایده‌هایی که",
-              full ? "From idea to build," : "Ideas taking",
+              full ? "فهرست پروژه‌ها،" : "پروژه‌ها و راهکارها،",
+              full ? "Project directory," : "Projects & solutions,",
             )}
             <br />
             <span>
               {phrase(
                 lang,
-                full ? "پروژه‌های رایبان." : "شکل می‌گیرند.",
-                full ? "work by Rayban." : "shape.",
+                full ? "محصولات و مطالعات فنی." : "از تحلیل تا پیاده‌سازی.",
+                full ? "products & technical studies." : "from analysis to deployment.",
               )}
             </span>
           </Heading>
@@ -328,15 +328,15 @@ function Projects({ lang, full = false }: { lang: Language; full?: boolean }) {
             <p>
               {phrase(
                 lang,
-                "هر پروژه، پاسخی به یک مسئله واقعی. با نگاهی فراتر از کد و توجه به انسان‌هایی که از آن استفاده می‌کنند.",
-                "Every project begins with a real problem. We look beyond the code to the people who will use it.",
+                "توسعه سیستم‌های نرم‌افزاری و هوش مصنوعی با تمرکز بر پایداری، عملکرد بالا و پاسخ‌گویی به نیازهای عملیاتی.",
+                "Developing software systems and applied AI focused on stability, high performance and operational demands.",
               )}
             </p>
             <span className="sample-note">
               {phrase(
                 lang,
-                "رائین و بخار، پروژه‌های واقعی ما؛ کارت‌های «طرح مفهومی» برای نمایش ایده‌ها هستند.",
-                "Raein and Bokhar are real projects. Cards marked “Concept study” are design explorations.",
+                "شامل سامانه‌های عملیاتی اجراشده و مطالعات تحقیق و توسعه (R&D) تیم رایبان.",
+                "Including production systems and Rayban's research & development (R&D) case studies.",
               )}
             </span>
           </div>
@@ -409,14 +409,12 @@ function Projects({ lang, full = false }: { lang: Language; full?: boolean }) {
                 <span className="project-status">
                   <span />
                   {project.demo
-                    ? phrase(lang, "طرح مفهومی", "Concept study")
-                    : project.status === "پروژه واقعی"
-                      ? phrase(lang, "پروژه واقعی", "Real project")
-                      : project.status}
+                    ? phrase(lang, "مطالعه و تحقیق (R&D)", "R&D Study")
+                    : phrase(lang, "سامانه عملیاتی", "Production")}
                 </span>
                 {!project.image && (
                   <span className="art-caption">
-                    {phrase(lang, "نمای مفهومی رابط", "UI illustration")}
+                    {phrase(lang, "پیش‌نمایش شماتیک رابط", "UI schematic preview")}
                   </span>
                 )}
                 <span className="project-open">
@@ -447,16 +445,16 @@ function About({ lang }: { lang: Language }) {
       <div className="wrap">
         <Reveal>
           <SectionLabel number="02">
-            {phrase(lang, "فلسفه ما", "OUR PHILOSOPHY")}
+            {phrase(lang, "رویکرد مهندسی", "ENGINEERING APPROACH")}
           </SectionLabel>
           <div className="about-layout">
             <div>
               <h2>
-                {phrase(lang, "از نیاز واقعی،", "Real needs.")}
+                {phrase(lang, "تحلیل دقیق مسئله،", "Thorough problem analysis,")}
                 <br />
-                {phrase(lang, "تا نرم‌افزاری", "Thoughtful software.")}
+                {phrase(lang, "معماری استاندارد،", "disciplined architecture,")}
                 <br />
-                <span>{phrase(lang, "که کار می‌کند.", "Built to work.")}</span>
+                <span>{phrase(lang, "پیاده‌سازی پایدار.", "resilient implementation.")}</span>
               </h2>
               <div className="about-signature">
                 <img
@@ -467,7 +465,7 @@ function About({ lang }: { lang: Language }) {
                   height="32"
                 />
                 <span dir="ltr">
-                  Ray<span>ban</span> / ENGINEERING TOMORROW
+                  Ray<span>ban</span> / ENGINEERING STUDIO
                 </span>
               </div>
             </div>
@@ -475,36 +473,36 @@ function About({ lang }: { lang: Language }) {
               <p className="large-body">
                 {phrase(
                   lang,
-                  "قبل از نوشتن کد، مشخص می‌کنیم چه مسئله‌ای باید حل شود و کاربر دقیقاً به چه چیزی نیاز دارد. بعد، تجربه کاربری و معماری نرم‌افزار را با هم طراحی می‌کنیم.",
-                  "Before writing code, we clarify the problem and what users need. Then we design the user experience and software architecture together.",
+                  "در تیم رایبان، توسعه نرم‌افزار با درک عمیق از منطق کسب‌وکار و نیاز کاربران آغاز می‌شود. پیش از هر خط کد، معماری سرویس، مدل داده و جریان‌های اصلی سیستم را با دقت طراحی می‌کنیم.",
+                  "At Rayban, software development begins with a clear understanding of business logic and user workflows. We design service architecture, data models and core workflows before implementation.",
                 )}
               </p>
               <p>
                 {phrase(
                   lang,
-                  "راه‌حل را مرحله‌به‌مرحله می‌سازیم، مسیرهای اصلی را بررسی می‌کنیم و با بازخورد بهترش می‌کنیم. هوش مصنوعی را هم جایی به کار می‌گیریم که واقعاً کاری را ساده‌تر یا دقیق‌تر کند.",
-                  "We build in stages, check the core workflows and improve with feedback. We use AI where it can make a task simpler or more accurate.",
+                  "فرایند توسعه را به شکل گام‌به‌گام، آزموده‌شده و شفاف پیش می‌بریم. فناوری‌های هوش مصنوعی را نیز نه به عنوان شعار، بلکه در بخش‌هایی به کار می‌گیریم که ارزش عملیاتی ملموسی ایجاد کنند.",
+                  "We follow a modular, tested and transparent development process. AI tools are incorporated not as buzzwords, but where they deliver concrete operational value.",
                 )}
               </p>
               <div className="values">
                 {[
                   [
-                    "شناخت دقیق نیاز",
-                    "Understand the need",
-                    "مسئله و اولویت‌های کاربر را روشن می‌کنیم.",
-                    "Clarify the problem and user priorities.",
+                    "تحلیل و شفاف‌سازی نیازمندی‌ها",
+                    "Requirements & Scoping",
+                    "تعریف دقیق مسئله، اولویت‌های کاربردی و معماری فنی.",
+                    "Clarifying requirements, technical priorities and operational scope.",
                   ],
                   [
-                    "طراحی قابل استفاده",
-                    "Design for use",
-                    "مسیرهای ساده و روشن برای کارهای مهم می‌سازیم.",
-                    "Make the important workflows clear and simple.",
+                    "طراحی مهندسی و مقیاس‌پذیر",
+                    "Scalable Engineering",
+                    "پیاده‌سازی ماژولار و ساختاریافته برای نگهداری آسان و توسعه آتی.",
+                    "Modular and structured implementations built for maintainability and future growth.",
                   ],
                   [
-                    "توسعه و بهبود پیوسته",
-                    "Build and improve",
-                    "با ارزیابی و بازخورد، قدم بعدی را انتخاب می‌کنیم.",
-                    "Use evaluation and feedback to guide the next step.",
+                    "تست، ارزیابی و بهبود مستمر",
+                    "Verification & Iteration",
+                    "سنجش کارایی، بازبینی امنیت و ارتقای مداوم بر پایه بازخورد عملیاتی.",
+                    "Verifying performance, assessing security and refining through operational feedback.",
                   ],
                 ].map(([fa, en, detail, enDetail]) => (
                   <div key={en}>
@@ -556,20 +554,20 @@ function Ecosystem({ lang }: { lang: Language }) {
       <Reveal className="ecosystem-layout">
         <div className="ecosystem-copy">
           <SectionLabel number="03">
-            {phrase(lang, "تخصص‌های ما", "OUR DISCIPLINES")}
+            {phrase(lang, "تخصص‌های تیم", "TEAM DISCIPLINES")}
           </SectionLabel>
           <h2>
-            {phrase(lang, "تخصص‌های مکمل،", "Complementary skills.")}
+            {phrase(lang, "تخصص‌های مکمل،", "Complementary skills,")}
             <br />
             <span>
-              {phrase(lang, "برای یک محصول.", "One product.")}
+              {phrase(lang, "برای محصولی یکپارچه.", "one unified product.")}
             </span>
           </h2>
           <p>
             {phrase(
               lang,
-              "در رایبان، توسعه نرم‌افزار، طراحی تجربه کاربری و زیرساخت را کنار هم پیش می‌بریم. هوش مصنوعی را هم وقتی به کار می‌گیریم که به حل مسئله مشخصی در محصول کمک کند.",
-              "At Rayban, we develop software, user experience and infrastructure together. We use AI when it helps solve a specific problem in the product.",
+              "در رایبان، مهندسی بک‌اند، فرانت‌اند، زیرساخت ابری و هوش مصنوعی در یک فرایند منسجم کنار هم قرار می‌گیرند تا سامانه‌ای کامل و مطمئن تحویل داده شود.",
+              "At Rayban, backend, frontend, cloud infrastructure and applied AI work together in a cohesive workflow to deliver complete, dependable systems.",
             )}
           </p>
           <div
@@ -646,21 +644,21 @@ function Technology({ lang }: { lang: Language }) {
     <section id="technology" className="section wrap technology-section">
       <Reveal>
         <SectionLabel number="05">
-          {phrase(lang, "ابزارهای ساختن فردا", "TOOLS FOR TOMORROW")}
+          {phrase(lang, "پشته فناوری", "TECHNOLOGY STACK")}
         </SectionLabel>
         <div className="section-heading">
           <h2>
-            {phrase(lang, "مهندسی،", "Engineering,")}
+            {phrase(lang, "انتخاب ابزارها،", "Technology choices,")}
             <br />
             <span>
-              {phrase(lang, "با انتخاب‌های آگاهانه.", "with intention.")}
+              {phrase(lang, "بر اساس الزامات مهندسی.", "driven by engineering.")}
             </span>
           </h2>
           <p>
             {phrase(
               lang,
-              "فناوری برای ما هدف نیست؛ ابزار رسیدن به یک راه‌حل درست است. هر انتخاب، متناسب با مسئله و مسیر رشد محصول.",
-              "Technology is a means to the right solution. Every choice serves the problem and the product’s growth.",
+              "فناوری برای ما ابزار رسیدن به یک راه‌حل پایدار است؛ هر ابزار متناسب با مقیاس، بار پردازشی و نیازهای بلندمدت سیستم انتخاب می‌شود.",
+              "Technology serves as the foundation for durable solutions. Every tool is chosen to fit scale, workload and long-term project viability.",
             )}
           </p>
         </div>
@@ -733,7 +731,7 @@ function Technology({ lang }: { lang: Language }) {
                 </code>
               </pre>
               <div className="code-window-bottom">
-                <span className="signal-dot" /> BUILT WITH PURPOSE
+                <span className="signal-dot" /> PRODUCTION-READY ARCHITECTURE
               </div>
             </div>
           </div>
@@ -747,21 +745,21 @@ function Journey({ lang }: { lang: Language }) {
     <section className="journey section wrap" id="journey">
       <Reveal>
         <SectionLabel number="06">
-          {phrase(lang, "مسیر ساختن", "THE BUILDING JOURNEY")}
+          {phrase(lang, "چرخه توسعه", "DEVELOPMENT LIFECYCLE")}
         </SectionLabel>
         <div className="section-heading">
           <h2>
-            {phrase(lang, "از پرسش درست،", "From the right question,")}
+            {phrase(lang, "مراحل توسعه محصول،", "Our development process,")}
             <br />
             <span>
-              {phrase(lang, "تا تأثیر واقعی.", "to meaningful impact.")}
+              {phrase(lang, "از تحلیل اولیه تا استقرار پایدار.", "from initial analysis to production.")}
             </span>
           </h2>
           <p>
             {phrase(
               lang,
-              "یک مسیر شفاف برای تبدیل مسئله به محصول. تاریخچه و نقاط عطف واقعی تیم پس از دریافت اطلاعات اضافه می‌شوند.",
-              "A clear path from problem to product. The team’s actual milestones will be added when details are available.",
+              "هر پروژه در رایبان طبق مراحلی شفاف و فازبندی‌شده پیش می‌رود تا کیفیت فنی، زمان‌بندی دقیق و پایداری بلندمدت سیستم تضمین شود.",
+              "Every project at Rayban follows a transparent, phased workflow to ensure technical quality, predictable delivery and long-term reliability.",
             )}
           </p>
         </div>
@@ -769,31 +767,31 @@ function Journey({ lang }: { lang: Language }) {
           {[
             [
               "01",
-              "کشف و شناخت",
-              "Discover",
-              "با شنیدن شروع می‌کنیم؛ مسئله، آدم‌ها و فرصت‌ها.",
-              "We begin by listening to the problem, people and opportunities.",
+              "تحلیل و شناخت مسئله",
+              "Discovery & Scoping",
+              "بررسی الزامات کسب‌وکار، مدل‌سازی داده و تعیین اولویت‌های فنی.",
+              "Analyzing business workflows, data models and technical scope.",
             ],
             [
               "02",
-              "طراحی و معماری",
-              "Design",
-              "یک تجربه روشن، روی یک ساختار قابل توسعه.",
-              "A clear experience on an extensible foundation.",
+              "معماری و طراحی سیستم",
+              "Architecture & Design",
+              "طراحی ساختار سرویس‌ها، قراردادهای API و پروتوتایپ رابط کاربری.",
+              "Designing service architecture, API contracts and UI prototypes.",
             ],
             [
               "03",
-              "ساخت و ارزیابی",
-              "Build",
-              "توسعه پیوسته، بازخورد واقعی و دقت در جزئیات.",
-              "Continuous development, meaningful feedback and attention to detail.",
+              "پیاده‌سازی و تست کیفیت",
+              "Build & Verification",
+              "توسعه ماژولار کد، پیاده‌سازی آزمون‌های خودکار و سنجش کارایی.",
+              "Modular implementation, automated testing and performance verification.",
             ],
             [
               "04",
-              "انتشار و رشد",
-              "Evolve",
-              "هر انتشار، آغاز مرحله بعدی یادگیری است.",
-              "Every release starts the next chapter of learning.",
+              "استقرار و پایش مداوم",
+              "Deploy & Maintain",
+              "راه‌اندازی در زیرساخت ابری، مانیتورینگ سلامت سرویس و نگهداری مستمر.",
+              "Cloud rollout, continuous health monitoring and ongoing maintenance.",
             ],
           ].map(([n, fa, en, desc, enDesc]) => (
             <div key={n}>

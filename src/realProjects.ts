@@ -7,13 +7,13 @@ export const realProjects: Project[] = [
     title: ["رائین", "Raein"],
     category: ["پلتفرم یکپارچه مدرسه", "School platform"],
     description: [
-      "یک فضای متصل برای مدرسه؛ مدیریت آموزش، حضور و غیاب، تکالیف و ارتباط خانواده‌ها، همراه با ابزارهای هوش مصنوعی.",
-      "A connected school workspace for learning, attendance, assignments and family communication, with AI tools.",
+      "سامانه جامع مدیریت مدرسه؛ اتوماسیون فرایندهای آموزشی، نمرات، حضور و غیاب و ارتباط هوشمند معلمان با اولیا.",
+      "An integrated school management platform for learning workflows, grading, attendance and intelligent family communication.",
     ],
     stack: ["React", "TypeScript", "Django", "PostgreSQL", "AI / RAG"],
     visual: "school",
     color: "#9f8bff",
-    status: "پروژه واقعی",
+    status: "سامانه عملیاتی",
     demo: false,
     features: [
       "فضاهای اختصاصی مدیر، معلم، دانش‌آموز و والدین",
@@ -57,7 +57,7 @@ export const realProjects: Project[] = [
     stack: ["React", "Django REST", "PostgreSQL", "Redis", "Celery"],
     visual: "business",
     color: "#77cde1",
-    status: "پروژه واقعی",
+    status: "سامانه عملیاتی",
     demo: false,
     features: [
       "کاتالوگ خدمات و محصولات و سبد خرید",

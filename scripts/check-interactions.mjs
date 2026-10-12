@@ -145,12 +145,12 @@ await click(document.querySelector('.rail-navigation a[href="/contact"]'));
 assert.equal(dom.window.location.pathname, "/contact");
 assert.ok(document.querySelector('a[href="tel:+989045911122"]'));
 for (const href of [
-  "https://t.me/ali_hashemi8",
-  "https://eitaa.com/ali_hashemi8",
-  "https://rubika.ir/ali_hashemi8",
-  "https://ble.ir/ali_hashemi8",
-  "https://github.com/alihashemi8",
-  "https://www.linkedin.com/in/alihashemi8/",
+  "https://t.me/rayban",
+  "https://eitaa.com/rayban",
+  "https://rubika.ir/rayban",
+  "https://ble.ir/rayban",
+  "https://github.com/rayban",
+  "https://www.linkedin.com/company/rayban/",
   "https://wa.me/989045911122",
 ])
   assert.ok(document.querySelector(`.contact-directory a[href="${href}"]`));
